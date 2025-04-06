@@ -128,7 +128,7 @@
       <img src="Products/Classic Collection/Classic Silicone/Silicon_Amber.jpeg" class="w-auto h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
       <div class="absolute bottom-0 left-0 w-full h-28 bg-yellow-300 bg-opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
         <div class="text-center">
-          <p class="text-black text-xl font-bold">Silicone Pink</p>
+          <p class="text-black text-xl font-bold">Amber Silicon</p>
           <p class="text-black text-sm">Models</p>
         </div>
       </div>
@@ -136,86 +136,192 @@
   </div>
 </section>
 
+<!-- Stand Orange Modal -->
+<div id="modalPopular1" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+    <button onclick="closeModal('modalPopular1')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 font-bold">&times;</button>
 
-<!-- Modal for Stand Orange -->
-<div id="modalPopular1" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
-  <div class="bg-white w-full max-w-lg rounded-lg shadow-2xl overflow-hidden relative">
-    <button onclick="closeModal('modalPopular1')" class="absolute top-2 right-4 text-2xl text-white z-50">&times;</button>
-    
-    <!-- Image Display -->
-    <div class="relative w-full h-[400px] bg-black flex items-center justify-center">
-      <img id="modal1Img1" src="Products/Stand_orange_preview.jpeg" class="max-h-full object-contain transition-all duration-300 ease-in-out" />
-      <img id="modal1Img2" src="Products/Stand_orange.jpeg" class="max-h-full object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out hidden" />
-
-      <!-- Arrows -->
-      <button onclick="toggleModalImage('1')" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&lt;</button>
-      <button onclick="toggleModalImage('1')" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&gt;</button>
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="mainImagePopular1" src="Products/Luxury/Hard Stand/Stand_orange.jpeg" class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Luxury/Hard Stand/Stand_orange.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular1', this)">
+        <img src="Products/Luxury/Hard Stand/Stand_Brown.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular1', this)">
+        <img src="Products/Luxury/Hard Stand/Stand_Black.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular1', this)">
+        <img src="Products/Luxury/Hard Stand/Stand_Gray.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular1', this)">
+      </div>
     </div>
 
     <!-- Info Section -->
-    <div class="bg-blue-900 text-white p-6 text-center">
-      <h3 class="text-3xl font-bold mb-2">Stand Orange</h3>
-      <p class="text-base mb-1">iPhone 12, 13, 14, 15 Series</p>
-      <p class="text-2xl font-bold mb-4">Price: Rs. 1139</p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="https://www.instagram.com/coversbee.nepal" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Instagram</a>
-        <a href="https://www.tiktok.com/@coversbee.np" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Tiktok</a>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+     <!-- Info Section with Poppins font -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">StandCase</h2>
+
+  <!-- Price with larger font and Poppins -->
+        <p class="text-4xl font-semibold font-family text-red-600">Rs. 1139</p>
+
+  <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+          <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+          <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+          <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+        </div>
+
+  <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-orange-500 text-stone-100 px-3 py-1 rounded-full text-sm">Orange</span>
+        <span class="bg-yellow-950 text-stone-100 px-3 py-1 rounded-full text-sm">Brown</span>
+        <span class="bg-neutral-900 text-stone-100 px-3 py-1 rounded-full text-sm">Black</span>
+        <span class="bg-neutral-500 text-stone-100 px-3 py-1 rounded-full text-sm">Grey</span>
+      </div>
+
+  <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Sleek and minimal, the StandCase is your ideal hybrid of style and function. It features a discreet kickstand and shock-resistant body with a premium textured grip.
+      </p>
+
+  <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal for Military Purple -->
-<div id="modalPopular2" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
-  <div class="bg-white w-full max-w-lg rounded-lg shadow-2xl overflow-hidden relative">
-    <button onclick="closeModal('modalPopular2')" class="absolute top-2 right-4 text-2xl text-white z-50">&times;</button>
+<!-- Military Black Modal -->
+<div id="modalPopular2" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+    <button onclick="closeModal('modalPopular2')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 font-bold">&times;</button>
 
-    <div class="relative w-full h-[400px] bg-black flex items-center justify-center">
-      <img id="modal2Img1" src="Products/Black Military_Preview.jpeg" class="max-h-full object-contain transition-all duration-300 ease-in-out" />
-      <img id="modal2Img2" src="Products/Black Military.jpeg" class="max-h-full object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out hidden" />
-
-      <button onclick="toggleModalImage('2')" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&lt;</button>
-      <button onclick="toggleModalImage('2')" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&gt;</button>
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="mainImagePopular2" src="Products/Classic Collection/Military Grade/Black Military.jpeg" class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Classic Collection/Military Grade/Black Military.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular2', this)">
+        <img src="Products/Classic Collection/Military Grade/Brown_Military.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular2', this)">
+        <img src="Products/Classic Collection/Military Grade/Gray_Military.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular2', this)">
+      </div>
     </div>
 
-    <div class="bg-blue-900 text-white p-6 text-center">
-      <h3 class="text-3xl font-bold mb-2">Military Black</h3>
-      <p class="text-base mb-1">iPhone 12, 13, 14, 15 Series</p>
-      <p class="text-2xl font-bold mb-4">Price: Rs. 499</p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="https://www.instagram.com/coversbee.nepal" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Instagram</a>
-        <a href="https://www.tiktok.com/@coversbee.np" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Tiktok</a>
+    <!-- Info Section -->
+    <!-- Info Section with Poppins -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Military Case</h2>
+
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 1239</p>
+
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-yellow-950 text-stone-100 px-3 py-1 rounded-full text-sm">Brown</span>
+        <span class="bg-neutral-900 text-stone-100 px-3 py-1 rounded-full text-sm">Black</span>
+        <span class="bg-neutral-500 text-stone-100 px-3 py-1 rounded-full text-sm">Grey</span>
+      </div>
+
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Durable and rugged, the Military Case is made for ultimate protection. Designed with reinforced corners, a textured grip, and shockproof materials—perfect for those who demand reliability with bold style.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal for Silicon Amber -->
-<div id="modalPopular3" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
-  <div class="bg-white w-full max-w-lg rounded-lg shadow-2xl overflow-hidden relative">
-    <button onclick="closeModal('modalPopular3')" class="absolute top-2 right-4 text-2xl text-white z-50">&times;</button>
+<!-- Silicon Amber Modal -->
+<div id="modalPopular3" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+    <button onclick="closeModal('modalPopular3')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 font-bold">&times;</button>
 
-    <div class="relative w-full h-[400px] bg-black flex items-center justify-center">
-      <img id="modal3Img1" src="Products/Silicon_Amber_Preview.jpeg" class="max-h-full object-contain transition-all duration-300 ease-in-out" />
-      <img id="modal3Img2" src="Products/Silicon_Amber.jpeg" class="max-h-full object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out hidden" />
-
-      <button onclick="toggleModalImage('3')" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&lt;</button>
-      <button onclick="toggleModalImage('3')" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&gt;</button>
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="mainImagePopular3" src="Products/Classic Collection/Classic Silicone/Silicon_Amber.jpeg" class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Classic Collection/Classic Silicone/Silicon_Amber.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular3', this)">
+        <img src="Products/Classic Collection/Classic Silicone/Silicon_Pink.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular3', this)">
+        <img src="Products/Classic Collection/Classic Silicone/Silicon_Yellow.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular3', this)">
+      </div>
     </div>
 
-    <div class="bg-blue-900 text-white p-6 text-center">
-      <h3 class="text-3xl font-bold mb-2">Silicone Amber</h3>
-      <p class="text-base mb-1">iPhone 12, 13, 14, 15 Series</p>
-      <p class="text-2xl font-bold mb-4">Price: Rs. 449</p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="https://www.instagram.com/coversbee.nepal" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Instagram</a>
-        <a href="https://www.tiktok.com/@coversbee.np" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Tiktok</a>
+    <!-- Info Section -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Silicon</h2>
+
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 639</p>
+
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-amber-600 text-stone-100 px-3 py-1 rounded-full text-sm">Amber</span>
+        <span class="bg-yellow-600 text-stone-100 px-3 py-1 rounded-full text-sm">Yellow</span>
+        <span class="bg-pink-600 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
+      </div>
+
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Designed with charm and elegance, the Purple Butterfly case brings a soft, trendy accent to your phone. Perfect for those who love minimalism with a touch of nature-inspired flair.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SCRIPT FOR MODAL IMAGE TOGGLE -->
+<!-- Script -->
 <script>
   function openModal(id) {
     document.getElementById(id).classList.remove('hidden');
@@ -225,15 +331,15 @@
     document.getElementById(id).classList.add('hidden');
   }
 
-  function toggleModalImage(id) {
-    const img1 = document.getElementById(`modal${id}Img1`);
-    const img2 = document.getElementById(`modal${id}Img2`);
-    if (img1 && img2) {
-      img1.classList.toggle('hidden');
-      img2.classList.toggle('hidden');
+  function updateImage(targetId, clickedImage) {
+    const mainImg = document.getElementById(targetId);
+    if (mainImg && clickedImage.src) {
+      mainImg.src = clickedImage.src;
     }
   }
 </script>
+
+
 
 <!-- New Design Section (Initially Hidden) -->
 <section id="newDesignSection" class="tab-section hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl mx-auto">
@@ -251,33 +357,76 @@
     </div>
   </div>
   
- <div id="modalnewdesign1" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
-  <div class="bg-white w-full max-w-lg rounded-lg shadow-2xl overflow-hidden relative">
-    <!-- Close Button -->
-    <button onclick="closeModal('modalnewdesign1')" class="absolute top-2 right-4 text-2xl text-white z-50">&times;</button>
-    
-    <!-- Image Toggle Carousel -->
-    <div class="relative w-full h-[400px] bg-black flex items-center justify-center">
-      <img id="modalnewdesign1Img1" src="Products/Funky and Fun/Butterfly/Butterfly_Purple_Hand.jpeg" class="max-h-full object-contain transition-all duration-300 ease-in-out" />
-      <img id="modalnewdesign1Img2" src="Products/Funky and Fun/Butterfly/Butterfly_Purple.jpeg" class="max-h-full object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out hidden" />
+  <!-- Modal: Purple Butterfly -->
+<div id="modalnewdesign1" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
 
-      <!-- Arrows -->
-      <button onclick="toggleModalImage('newdesign1')" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&lt;</button>
-      <button onclick="toggleModalImage('newdesign1')" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&gt;</button>
+    <button onclick="closeModal('modalnewdesign1')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">&times;</button>
+
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalnewdesign1ImgMain" src="Products/Funky and Fun/Butterfly/Butterfly_Purple_Hand.jpeg" class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Butterfly/Butterfly_Purple_Hand.jpeg" class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900" onclick="updateModalImage('newdesign1', this.src)">
+        <img src="Products/Funky and Fun/Butterfly/Butterfly_Purple.jpeg" class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900" onclick="updateModalImage('newdesign1', this.src)">
+      </div>
     </div>
 
     <!-- Info Section -->
-    <div class="bg-blue-900 text-white p-6 text-center">
-      <h3 class="text-3xl font-bold mb-2">Purple Butterfly</h3>
-      <p class="text-base mb-1">iPhone 12, 13, 14, 15 Series</p>
-      <p class="text-2xl font-bold mb-4">Price: Rs. 499</p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="https://www.instagram.com/coversbee.nepal" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Instagram</a>
-        <a href="https://www.tiktok.com/@coversbee.np" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Tiktok</a>
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Purple Butterfly</h2>
+
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 789</p>
+
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Graceful and nature-inspired, the Purple Butterfly case brings elegance to your phone. Soft purple tones and a minimalist design make it the perfect blend of trendy and timeless.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  function updateModalImage(modalId, imageSrc) {
+    const img = document.getElementById(`modal${modalId}ImgMain`);
+    if (img) {
+      img.src = imageSrc;
+    }
+  }
+
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+</script>
+
 
   <!-- Half Butterfly -->
   <div class="border-2 border-black bg-white p-2">
@@ -293,31 +442,54 @@
   </div>
 </div>
   
-  <!-- Modal for Half Butterfly Purple -->
-<div id="modalnewdesign2" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
-  <div class="bg-white w-full max-w-lg rounded-lg shadow-2xl overflow-hidden relative">
-    
-    <!-- Close Button -->
-    <button onclick="closeModal('modalnewdesign2')" class="absolute top-2 right-4 text-2xl text-white z-50">&times;</button>
-    
-    <!-- Image Toggle Carousel -->
-    <div class="relative w-full h-[400px] bg-black flex items-center justify-center">
-      <img id="modalnewdesign2Img1" src="Products/Funky and Fun/Half Butterfly/HalfButterfly_Purple_Hand.jpeg" class="max-h-full object-contain transition-all duration-300 ease-in-out" />
-      <img id="modalnewdesign2Img2" src="Products/Funky and Fun/Half Butterfly/HalfButterfly_Purple.jpeg" class="max-h-full object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out hidden" />
+  <!-- Modal: Half Butterfly Purple -->
+<div id="modalnewdesign2" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
 
-      <!-- Arrows -->
-      <button onclick="toggleModalImage('newdesign2')" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&lt;</button>
-      <button onclick="toggleModalImage('newdesign2')" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&gt;</button>
+    <button onclick="closeModal('modalnewdesign2')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">&times;</button>
+
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalnewdesign2ImgMain" src="Products/Funky and Fun/Half Butterfly/HalfButterfly_Purple_Hand.jpeg" class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Half Butterfly/HalfButterfly_Purple_Hand.jpeg" class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900" onclick="updateModalImage('newdesign2', this.src)">
+        <img src="Products/Funky and Fun/Half Butterfly/HalfButterfly_Purple.jpeg" class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900" onclick="updateModalImage('newdesign2', this.src)">
+      </div>
     </div>
 
     <!-- Info Section -->
-    <div class="bg-blue-900 text-white p-6 text-center">
-      <h3 class="text-3xl font-bold mb-2">Half Butterfly Purple</h3>
-      <p class="text-base mb-1">iPhone 12, 13, 14, 15 Series</p>
-      <p class="text-2xl font-bold mb-4">Price: Rs. 499</p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="https://www.instagram.com/coversbee.nepal" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Instagram</a>
-        <a href="https://www.tiktok.com/@coversbee.np" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Tiktok</a>
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Half Butterfly Purple</h2>
+
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 839</p>
+
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        The Half Butterfly Purple case brings a unique split-wing design that adds artistic charm to your device while maintaining durability and elegance.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
       </div>
     </div>
   </div>
@@ -337,36 +509,58 @@
   </div>
 </div>
 
-<!-- Modal for Flowers Purple -->
-<div id="modalnewdesign3" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
-  <div class="bg-white w-full max-w-lg rounded-lg shadow-2xl overflow-hidden relative">
-    
-    <!-- Close Button -->
-    <button onclick="closeModal('modalnewdesign3')" class="absolute top-2 right-4 text-2xl text-white z-50">&times;</button>
-    
-    <!-- Image Toggle Carousel -->
-    <div class="relative w-full h-[400px] bg-black flex items-center justify-center">
-      <img id="modalnewdesign3Img1" src="Products/Funky and Fun/Acrylic/Purple Flowers Preview.jpeg" class="max-h-full object-contain transition-all duration-300 ease-in-out" />
-      <img id="modalnewdesign3Img2" src="Products/Funky and Fun/Acrylic/Purple Flowers.jpeg" class="max-h-full object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out hidden" />
-      
-      <!-- Arrows -->
-      <button onclick="toggleModalImage('newdesign3')" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&lt;</button>
-      <button onclick="toggleModalImage('newdesign3')" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 px-2 py-1 rounded-full text-black hover:bg-blue-900 hover:text-white transition z-10">&gt;</button>
+<!-- Modal: Purple Flowers -->
+<div id="modalnewdesign3" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+
+    <button onclick="closeModal('modalnewdesign3')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">&times;</button>
+
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalnewdesign3ImgMain" src="Products/Funky and Fun/Acrylic/Purple Flowers Preview.jpeg" class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Acrylic/Purple Flowers Preview.jpeg" class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900" onclick="updateModalImage('newdesign3', this.src)">
+        <img src="Products/Funky and Fun/Acrylic/Purple Flowers.jpeg" class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900" onclick="updateModalImage('newdesign3', this.src)">
+      </div>
     </div>
 
     <!-- Info Section -->
-    <div class="bg-blue-900 text-white p-6 text-center">
-      <h3 class="text-3xl font-bold mb-2">Flowers Purple</h3>
-      <p class="text-base mb-1">iPhone 12, 13, 14, 15 Series</p>
-      <p class="text-2xl font-bold mb-4">Price: Rs. 499</p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="https://www.instagram.com/coversbee.nepal" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on Instagram</a>
-        <a href="https://www.tiktok.com/@coversbee.np" target="_blank" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-yellow-300 active:bg-blue-600 transition">Inquire on TikTok</a>
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Flowers Purple</h2>
+
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 499</p>
+
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Chic floral acrylic case in radiant purple tones, perfect to add a soft aesthetic vibe while offering sturdy protection.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
       </div>
     </div>
   </div>
 </div>
-
 </section>
 
 <script>
@@ -390,6 +584,7 @@
     showTab('popularSection');
   }
 </script>
+
 
 <span class="text-center text-2xl font-bold mt-10 block"></span>
 
@@ -419,7 +614,7 @@
       </p>
 
       <!-- Countdown -->
-      <div class="flex justify-center gap-2 mt-2">
+      <div class="flex justify-center gap-2 mt-2" style="font-family: 'Poppins', sans-serif;">
         <div class="bg-white px-3 py-2 rounded shadow text-center">
           <div id="days" class="text-xl font-bold text-red-600">00</div>
           <div class="text-xs font-medium mt-1 text-red-600">Days</div>
