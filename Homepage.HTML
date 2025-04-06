@@ -669,13 +669,13 @@
 <section class="text-center text-xl font-semibold mt-10">
   <div class="flex justify-center gap-8">
     <button onclick="showCategory('Classic')" class="underline-hover">Classic Collection</button>
-    <button onclick="showCategory('halfbutterfly')" class="underline-hover">Funky and Fun</button>
+    <button onclick="showCategory('Funky')" class="underline-hover">Funky and Fun</button>
     <button onclick="showCategory('military')" class="underline-hover">Luxury</button>
     <button onclick="showCategory('butterfly')" class="underline-hover">Artistic Designs</button>
   </div>
 </section>
 
-<!-- Silicon Section with Carousel Popups --> 
+<!-- Classic Section with Carousel Popups --> 
 <section id="Classic" class="category-section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl mx-auto">
 
  <!-- Classic Silicone -->
@@ -949,6 +949,281 @@ function closeModal(id) {
   document.getElementById(id).classList.add('hidden');
 }
 </script>
+
+<!-- Funky Section with Carousel Popups --> 
+<section id="Funky" class="category-section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl mx-auto">
+
+  <!-- Acrylic -->
+  <div class="border-2 border-black bg-white p-2">
+   <div class="relative group w-full h-auto cursor-pointer overflow-hidden" onclick="openModal('modalAcrylic')">
+    <img src="Products/Funky and Fun/Acrylic/Mixed_Flowers.jpeg" alt="Acrylic"
+    class="w-full h-auto object-cover transition-transform duration-300 transform group-hover:scale-110" />
+     <div class="absolute bottom-0 left-0 w-full h-28 bg-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+       <div class="text-center">
+         <p class="text-black text-xl font-bold">Acrylic</p>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+ <!-- Bear -->
+ <div class="border-2 border-black bg-white p-2">
+   <div class="relative group w-full h-auto cursor-pointer overflow-hidden" onclick="openModal('modalBear')">
+     <img src="Products/Funky and Fun/Bear 3D/Bear_3D_Orange.jpeg" alt="Acrylic"
+     class="w-full h-auto object-cover transition-transform duration-300 transform group-hover:scale-110" />
+     <div class="absolute bottom-0 left-0 w-full h-28 bg-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+       <div class="text-center">
+         <p class="text-black text-xl font-bold">Military Grade</p>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+ <!-- Rough Back -->
+ <div class="border-2 border-black bg-white p-2">
+   <div class="relative group w-full h-auto cursor-pointer overflow-hidden" onclick="openModal('modalRoughBack')">
+     <img src="Products/Classic Collection/Rough Back/RoughBack_Blue.jpeg" alt="Rough Back" class="w-full h-auto scale-[1.1] object-cover transition-opacity duration-300 group-hover:opacity-0" />
+     <img src="Products/Classic Collection/Rough Back/RoughBack_Brown.jpeg" alt="Rough Hover" class="w-auto h-auto absolute top-0 left-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+     <div class="absolute bottom-0 left-0 w-full h-28 bg-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+       <div class="text-center">
+         <p class="text-black text-xl font-bold">Rough Back</p>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+ </section>
+ <!-- Modal for Classic Silicone -->
+ <div id="modalClassicSilicone" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+ <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+ 
+   <button onclick="closeModal('modalClassicSilicone')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+     &times;
+   </button>
+ 
+   <!-- Image Section -->
+   <div class="p-6 flex flex-col items-center justify-center">
+     <img id="modalClassicSiliconeImgMain" src="Products/Classic Collection/Classic Silicone/Silicon_Amber.jpeg"
+       class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+ 
+     <div class="flex gap-3 mt-4 flex-wrap justify-center">
+       <img src="Products/Classic Collection/Classic Silicone/Silicon_Amber.jpeg"
+            class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+            onclick="updateModalImage('ClassicSilicone', this.src)">
+       <img src="Products/Classic Collection/Classic Silicone/Silicon_Pink.jpeg"
+            class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+            onclick="updateModalImage('ClassicSilicone', this.src)">
+       <img src="Products/Classic Collection/Classic Silicone/Silicon_Yellow.jpeg"
+            class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+            onclick="updateModalImage('ClassicSilicone', this.src)">
+     </div>
+   </div>
+ 
+   <!-- Info Section -->
+   <!-- Info Section -->
+   <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+     <h2 class="text-2xl sm:text-3xl font-bold">Silicon</h2>
+ 
+     <!-- Price -->
+     <p class="text-4xl font-semibold text-red-600">Rs. 639</p>
+ 
+     <!-- Compatible Models -->
+     <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+     <div class="flex gap-2 flex-wrap">
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+     </div>
+ 
+     <!-- Available Colors -->
+     <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+     <div class="flex gap-2 flex-wrap">
+       <span class="bg-amber-600 text-stone-100 px-3 py-1 rounded-full text-sm">Amber</span>
+       <span class="bg-yellow-600 text-stone-100 px-3 py-1 rounded-full text-sm">Yellow</span>
+       <span class="bg-pink-600 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
+     </div>
+ 
+     <!-- Description -->
+     <h3 class="font-semibold mt-4 mb-1">Description</h3>
+     <p class="text-sm text-gray-700 leading-relaxed">
+       Designed with charm and elegance, the Purple Butterfly case brings a soft, trendy accent to your phone. Perfect for those who love minimalism with a touch of nature-inspired flair.
+     </p>
+ 
+     <!-- Buttons -->
+     <div class="flex flex-col sm:flex-row gap-4 mt-6">
+       <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+         class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+         Inquire on Instagram
+       </a>
+       <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+         class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+         Inquire on TikTok
+       </a>
+     </div>
+   </div>
+ </div>
+ </div>
+ 
+ <!-- Modal for Military Grade -->
+ <div id="modalMilitaryGrade" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+ <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+ 
+   <button onclick="closeModal('modalMilitaryGrade')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+     &times;
+   </button>
+ 
+   <!-- Image Section -->
+   <div class="p-6 flex flex-col items-center justify-center">
+     <img id="modalMilitaryGradeImgMain" src="Products/Classic Collection/Military Grade/Black Military.jpeg"
+       class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+ 
+     <div class="flex gap-3 mt-4 flex-wrap justify-center">
+       <img src="Products/Classic Collection/Military Grade/Black Military.jpeg"
+            class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+            onclick="updateModalImage('MilitaryGrade', this.src)">
+       <img src="Products/Classic Collection/Military Grade/Brown_Military.jpeg"
+            class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+            onclick="updateModalImage('MilitaryGrade', this.src)">
+       <img src="Products/Classic Collection/Military Grade/Gray_Military.jpeg"
+            class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+            onclick="updateModalImage('MilitaryGrade', this.src)">
+     </div>
+   </div>
+ 
+   <!-- Info Section -->
+   <!-- Info Section -->
+   <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+     <h2 class="text-2xl sm:text-3xl font-bold">Military Case</h2>
+ 
+     <!-- Price -->
+     <p class="text-4xl font-semibold text-red-600">Rs. 1239</p>
+ 
+     <!-- Compatible Models -->
+     <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+     <div class="flex gap-2 flex-wrap">
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+     </div>
+ 
+     <!-- Available Colors -->
+     <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+     <div class="flex gap-2 flex-wrap">
+       <span class="bg-yellow-950 text-stone-100 px-3 py-1 rounded-full text-sm">Brown</span>
+       <span class="bg-neutral-900 text-stone-100 px-3 py-1 rounded-full text-sm">Black</span>
+       <span class="bg-neutral-500 text-stone-100 px-3 py-1 rounded-full text-sm">Grey</span>
+     </div>
+ 
+     <!-- Description -->
+     <h3 class="font-semibold mt-4 mb-1">Description</h3>
+     <p class="text-sm text-gray-700 leading-relaxed">
+       Durable and rugged, the Military Case is made for ultimate protection. Designed with reinforced corners, a textured grip, and shockproof materials—perfect for those who demand reliability with bold style.
+     </p>
+ 
+     <!-- Buttons -->
+     <div class="flex flex-col sm:flex-row gap-4 mt-6">
+       <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+         class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+         Inquire on Instagram
+       </a>
+       <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+         class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+         Inquire on TikTok
+       </a>
+     </div>
+   </div>
+ </div>
+ </div>
+ 
+ <!-- Modal for Military Grade -->
+ <div id="modalRoughBack" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+   <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+   
+     <button onclick="closeModal('modalRoughBack')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+       &times;
+     </button>
+   
+     <!-- Image Section -->
+     <div class="p-6 flex flex-col items-center justify-center">
+       <img id="modalRoughBackImgMain" src="Products/Classic Collection/Rough Back/RoughBack_Blue.jpeg"
+         class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+   
+       <div class="flex gap-3 mt-4 flex-wrap justify-center">
+         <img src="Products/Classic Collection/Rough Back/RoughBack_Blue.jpeg"
+              class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+              onclick="updateModalImage('RoughBack', this.src)">
+         <img src="Products/Classic Collection/Rough Back/RoughBack_Brown.jpeg"
+              class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+              onclick="updateModalImage('RoughBack', this.src)">
+         <img src="Products/Classic Collection/Rough Back/RoughBack_Pink.jpeg"
+              class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+              onclick="updateModalImage('RoughBack', this.src)">
+       </div>
+     </div>
+   
+     <!-- Info Section -->
+     <!-- Info Section -->
+     <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+       <h2 class="text-2xl sm:text-3xl font-bold">Rough Back Case</h2>
+   
+       <!-- Price -->
+       <p class="text-4xl font-semibold text-red-600">Rs. 1239</p>
+   
+       <!-- Compatible Models -->
+       <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+       <div class="flex gap-2 flex-wrap">
+         <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+         <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+         <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+         <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+       </div>
+   
+       <!-- Available Colors -->
+       <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+       <div class="flex gap-2 flex-wrap">
+         <span class="bg-yellow-950 text-stone-100 px-3 py-1 rounded-full text-sm">Brown</span>
+         <span class="bg-neutral-900 text-stone-100 px-3 py-1 rounded-full text-sm">Bluek</span>
+         <span class="bg-neutral-500 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
+       </div>
+   
+       <!-- Description -->
+       <h3 class="font-semibold mt-4 mb-1">Description</h3>
+       <p class="text-sm text-gray-700 leading-relaxed">
+         Durable and rugged, the Military Case is made for ultimate protection. Designed with reinforced corners, a textured grip, and shockproof materials—perfect for those who demand reliability with bold style.
+       </p>
+   
+       <!-- Buttons -->
+       <div class="flex flex-col sm:flex-row gap-4 mt-6">
+         <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+           class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+           Inquire on Instagram
+         </a>
+         <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+           class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+           Inquire on TikTok
+         </a>
+       </div>
+     </div>
+   </div>
+   </div>
+ 
+ <!-- Script to manage both modals -->
+ <script>
+ function updateModalImage(category, src) {
+   const img = document.getElementById(`modal${category}ImgMain`);
+   if (img) img.src = src;
+ }
+ 
+ function openModal(id) {
+   document.getElementById(id).classList.remove('hidden');
+ }
+ 
+ function closeModal(id) {
+   document.getElementById(id).classList.add('hidden');
+ }
+ </script>
 
 <!-- Halfbutterfly Section -->
 <section id="halfbutterfly" class="category-section hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl mx-auto">
