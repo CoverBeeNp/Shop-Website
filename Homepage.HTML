@@ -875,7 +875,7 @@
       <h2 class="text-2xl sm:text-3xl font-bold">Rough Back Case</h2>
   
       <!-- Price -->
-      <p class="text-4xl font-semibold text-red-600">Rs. 1239</p>
+      <p class="text-4xl font-semibold text-red-600">Rs. 789</p>
   
       <!-- Compatible Models -->
       <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
@@ -889,15 +889,17 @@
       <!-- Available Colors -->
       <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
       <div class="flex gap-2 flex-wrap">
-        <span class="bg-yellow-950 text-stone-100 px-3 py-1 rounded-full text-sm">Brown</span>
-        <span class="bg-neutral-900 text-stone-100 px-3 py-1 rounded-full text-sm">Bluek</span>
-        <span class="bg-neutral-500 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
+        <span class="bg-blue-900 text-stone-100 px-3 py-1 rounded-full text-sm">Blue</span>
+        <span class="bg-amber-700 text-stone-100 px-3 py-1 rounded-full text-sm">Brown</span>
+        <span class="bg-pink-200 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
       </div>
   
       <!-- Description -->
       <h3 class="font-semibold mt-4 mb-1">Description</h3>
       <p class="text-sm text-gray-700 leading-relaxed">
-        Durable and rugged, the Military Case is made for ultimate protection. Designed with reinforced corners, a textured grip, and shockproof materials—perfect for those who demand reliability with bold style.
+        Built for grip and grit, this Rugged Ridge Case offers tough protection with a bold edge. Its ridged, textured back adds serious grip 
+        and style, while shock-absorbing materials and reinforced edges keep your phone safe in any situation. Perfect for those who live 
+        life on the move and need a case that can keep up.
       </p>
   
       <!-- Buttons -->
@@ -960,7 +962,7 @@ function showCategory(id) {
 
   <!-- Bear -->
  <div class="border-2 border-black bg-white p-2">
-   <div class="relative group w-full h-auto cursor-pointer overflow-hidden" onclick="openModal('modalBear')">
+   <div class="relative group w-full h-auto cursor-pointer overflow-hidden" onclick="openModal('modalBear3D')">
      <img src="Products/Funky and Fun/Bear 3D/Bear_3D_Orange.jpeg" alt="Bear"
      class="w-full h-auto object-cover transition-transform duration-300 transform group-hover:scale-110" />
      <div class="absolute bottom-0 left-0 w-full h-28 bg-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -970,6 +972,19 @@ function showCategory(id) {
      </div>
    </div>
  </div>
+
+ <!-- Birthday Bear -->
+ <div class="border-2 border-black bg-white p-2">
+  <div class="relative group w-full h-auto cursor-pointer overflow-hidden" onclick="openModal('modalBrtBear')">
+    <img src="Products/Funky and Fun/Bear 3D/BirthdayBear_Yellow.jpeg" alt="Bear"
+    class="w-full h-auto object-cover transition-transform duration-300 transform group-hover:scale-110" />
+    <div class="absolute bottom-0 left-0 w-full h-28 bg-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+      <div class="text-center">
+        <p class="text-black text-xl font-bold">Birthday Bear</p>
+      </div>
+    </div>
+  </div>
+</div>
  
  <!--  Curvy Butterfly -->
  <div class="border-2 border-black bg-white p-2">
@@ -1117,7 +1132,7 @@ function showCategory(id) {
      <h2 class="text-2xl sm:text-3xl font-bold">Acrylic</h2>
  
      <!-- Price -->
-     <p class="text-4xl font-semibold text-red-600">Rs. 639</p>
+     <p class="text-4xl font-semibold text-red-600">Rs. 789</p>
  
      <!-- Compatible Models -->
      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
@@ -1138,7 +1153,9 @@ function showCategory(id) {
      <!-- Description -->
      <h3 class="font-semibold mt-4 mb-1">Description</h3>
      <p class="text-sm text-gray-700 leading-relaxed">
-       Designed with charm and elegance, the Purple Butterfly case brings a soft, trendy accent to your phone. Perfect for those who love minimalism with a touch of nature-inspired flair.
+      Elevate your device with the Luxury Oil Painting Phone Case, a fusion of art and protection. This case features vibrant oil painting 
+      designs that add a touch of elegance and personality to your phone and offers durability and resistance against daily wear and tear
+       making it both stylish and functional
      </p>
  
      <!-- Buttons -->
@@ -1155,6 +1172,768 @@ function showCategory(id) {
    </div>
  </div>
  </div>
+<<<<<<< HEAD
+=======
+ 
+ <!-- Modal for Bear -->
+ <div id="modalBear3D" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+ <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+ 
+   <button onclick="closeModal('modalBear3D')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+     &times;
+   </button>
+ 
+   <!-- Image Section -->
+   <div class="p-6 flex flex-col items-center justify-center">
+     <img id="modalBearImgMain" src="Products/Funky and Fun/Bear 3D/Bear_3D_Orange.jpeg"
+       class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+ 
+     <div class="flex gap-3 mt-4 flex-wrap justify-center">
+       <img src="Products/Funky and Fun/Bear 3D/Bear_3D_Orange.jpeg"
+            class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+            onclick="updateModalImage('Bear3D', this.src)">
+     </div>
+   </div>
+ 
+   <!-- Info Section -->
+   <!-- Info Section -->
+   <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+     <h2 class="text-2xl sm:text-3xl font-bold">3D Bear Case</h2>
+ 
+     <!-- Price -->
+     <p class="text-4xl font-semibold text-red-600">Rs. 939</p>
+ 
+     <!-- Compatible Models -->
+     <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+     <div class="flex gap-2 flex-wrap">
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+     </div>
+ 
+     <!-- Available Colors -->
+     <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+     <div class="flex gap-2 flex-wrap">
+       <span class="bg-orange-400 text-stone-100 px-3 py-1 rounded-full text-sm">Orange</span>
+     </div>
+ 
+     <!-- Description -->
+     <h3 class="font-semibold mt-4 mb-1">Description</h3>
+     <p class="text-sm text-gray-700 leading-relaxed">
+      Let the Cute Bear adore your phone. Designed with reinforced corners and a textured grip, and shockproof materials, the Bear can bear
+      the extremes.
+     </p>
+ 
+     <!-- Buttons -->
+     <div class="flex flex-col sm:flex-row gap-4 mt-6">
+       <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+         class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+         Inquire on Instagram
+       </a>
+       <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+         class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+         Inquire on TikTok
+       </a>
+     </div>
+   </div>
+ </div>
+ </div>
+
+ <!-- Modal for Birthday Bear -->
+ <div id="modalBrtBear" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+ <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+ 
+   <button onclick="closeModal('modalBrtBear')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+     &times;
+   </button>
+ 
+   <!-- Image Section -->
+   <div class="p-6 flex flex-col items-center justify-center">
+     <img id="modalBrtBearImgMain" src="Products/Funky and Fun/Bear 3D/BirthdayBear_Yellow.jpeg"
+       class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+ 
+     <div class="flex gap-3 mt-4 flex-wrap justify-center">
+       <img src="Products/Funky and Fun/Bear 3D/BirthdayBear_Yellow.jpeg"
+            class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+            onclick="updateModalImage('BrtBear', this.src)">
+     </div>
+   </div>
+ 
+   <!-- Info Section -->
+   <!-- Info Section -->
+   <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+     <h2 class="text-2xl sm:text-3xl font-bold">Birthday Bear Case</h2>
+ 
+     <!-- Price -->
+     <p class="text-4xl font-semibold text-red-600">Rs. 1039</p>
+ 
+     <!-- Compatible Models -->
+     <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+     <div class="flex gap-2 flex-wrap">
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+       <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+     </div>
+ 
+     <!-- Available Colors -->
+     <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+     <div class="flex gap-2 flex-wrap">
+       <span class="bg-yellow-400 text-stone-100 px-3 py-1 rounded-full text-sm">Yellow</span>
+     </div>
+ 
+     <!-- Description -->
+     <h3 class="font-semibold mt-4 mb-1">Description</h3>
+     <p class="text-sm text-gray-700 leading-relaxed">
+      Let the Cute Bear adore your phone. Designed with reinforced corners and a textured grip, and shockproof materials, the Bear can bear
+      the extremes.
+     </p>
+ 
+     <!-- Buttons -->
+     <div class="flex flex-col sm:flex-row gap-4 mt-6">
+       <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+         class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+         Inquire on Instagram
+       </a>
+       <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+         class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+         Inquire on TikTok
+       </a>
+     </div>
+   </div>
+ </div>
+ </div>
+ 
+ <!-- Modal for Curvy Butterfly -->
+ <div id="modalCurvyButterfly" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+  
+    <button onclick="closeModal('modalCurvyButterfly')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+      &times;
+    </button>
+  
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalCurvyButterflyImgMain" src="Products/Funky and Fun/Curvy Butterfly/Butterfly_Pink.jpeg"
+        class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+  
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Curvy Butterfly/Butterfly_Pink.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('CurvyButterfly', this.src)">
+        <img src="Products/Funky and Fun/Curvy Butterfly/Butterfly_Purple.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('CurvyButterfly', this.src)">
+        <img src="Products/Funky and Fun/Curvy Butterfly/Butterfly_Red.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('CurvyButterfly', this.src)">
+      </div>
+    </div>
+  
+    <!-- Info Section -->
+    <!-- Info Section -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Curvy Butterfly</h2>
+  
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 789</p>
+  
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+  
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-pink-400 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
+        <span class="bg-purple-400 text-stone-100 px-3 py-1 rounded-full text-sm">Purple</span>
+        <span class="bg-pink-600 text-stone-100 px-3 py-1 rounded-full text-sm">Dark Pink</span>
+      </div>
+  
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+       Cute Butterfly case makes you and your device standout. Soft silicone, curvy edges and textured back, protect your device from falling,
+       scratches and wear and tear.
+      </p>
+  
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Modal for Curvy Mirror -->
+ <div id="modalCurvyMirror" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+  
+    <button onclick="closeModal('modalCurvyMirror')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+      &times;
+    </button>
+  
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalCurvyMirrorImgMain" src="Products/Funky and Fun/Curvy Mirror/Mirror_Orange.jpeg"
+        class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+  
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Curvy Mirror/Mirror_Orange.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('CurvyMirror', this.src)">
+        <img src="Products/Funky and Fun/Curvy Mirror/Mirror_Yellow.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('CurvyMirror', this.src)">
+      </div>
+    </div>
+  
+    <!-- Info Section -->
+    <!-- Info Section -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Curvy Mirror Case</h2>
+  
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 739</p>
+  
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+  
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-orange-400 text-stone-100 px-3 py-1 rounded-full text-sm">Orange</span>
+        <span class="bg-yellow-400 text-stone-100 px-3 py-1 rounded-full text-sm">Yellow</span>
+      </div>
+  
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+       Elevate your beauty with the mirror case. With tight grip, sleek mirror and curvy sides, it is perfect to reflect upon the hardness and reliability 
+       of the case.
+      </p>
+  
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Modal for Half Butterfly -->
+ <div id="modalHalfButterfly" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+  
+    <button onclick="closeModal('modalHalfButterfly')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+      &times;
+    </button>
+  
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalHalfButterflyImgMain" src="Products/Funky and Fun/Half Butterfly/Halfbuttefly_Black.jpeg"
+        class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+  
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Half Butterfly/Halfbutterfly_Black.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('HalfButterfly', this.src)">
+        <img src="Products/Funky and Fun/Half Butterfly/Halfbuttefly_Purple.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('HalfButterfly', this.src)">
+        <img src="Products/Funky and Fun/Half Butterfly/HalfButterfly_Purple_Hand.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('HalfButterfly', this.src)">
+      </div>
+    </div>
+  
+    <!-- Info Section -->
+    <!-- Info Section -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Half Butterfly</h2>
+  
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 839</p>
+  
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+  
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-black text-stone-100 px-3 py-1 rounded-full text-sm">Black</span>
+        <span class="bg-purple-400 text-stone-100 px-3 py-1 rounded-full text-sm">Purple</span>
+      </div>
+  
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Add sparkle to your device with this 3D Butterfly Glitter Case. Featuring a half-side butterfly design and shimmering glitter, 
+        it offers both style and protection. The durable material safeguards against scratches and minor drops, perfect for fashion-forward 
+        individuals.
+      </p>
+  
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Modal for Hello Kitty -->
+ <div id="modalHelloKitty" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+  
+    <button onclick="closeModal('modalHelloKitty')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+      &times;
+    </button>
+  
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalHelloKittyImgMain" src="Products/Funky and Fun/Hello Kitty/Hello_Kitty_Pink.jpeg"
+        class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+  
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Hello Kitty/Hello_Kitty_Pink.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('HelloKitty', this.src)">
+        <img src="Products/Funky and Fun/Hello Kitty/Hello_Kitty_Brown.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('HelloKitty', this.src)">
+        <img src="Products/Funky and Fun/Hello Kitty/Hello_Kitty_Black.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('HelloKitty', this.src)">
+      </div>
+    </div>
+  
+    <!-- Info Section -->
+    <!-- Info Section -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Hello Kitty</h2>
+  
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 929</p>
+  
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+  
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-pink-400 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
+        <span class="bg-amber-800 text-stone-100 px-3 py-1 rounded-full text-sm">Brown</span>
+        <span class="bg-black text-stone-100 px-3 py-1 rounded-full text-sm">Black</span>
+      </div>
+  
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Soft TPU case with built-in stand for iPhone. Offers a secure grip, protects against drops, and allows hands-free viewing.
+        Sleek, lightweight design with precise cutouts for easy access.
+      </p>
+  
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Modal for Wavy Hello Kitty -->
+ <div id="modalWavyHelloKitty" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+  
+    <button onclick="closeModal('modalWavyHelloKitty')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+      &times;
+    </button>
+  
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalWavyHelloKittyImgMain" src="Products/Funky and Fun/Hello Kitty/Hello_Kitty3D_Pink.jpeg"
+        class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+  
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Hello Kitty/Hello_Kitty3D_Pink.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('WavyHelloKitty', this.src)">
+      </div>
+    </div>
+  
+    <!-- Info Section -->
+    <!-- Info Section -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">3D Hello Kitty</h2>
+  
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 929</p>
+  
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+  
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-pink-400 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
+      </div>
+  
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Soft TPU case for iPhone. Offers a secure grip, protects against drops, and allows hands-free viewing.
+        Sleek, lightweight design with precise cutouts for easy access.
+      </p>
+  
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Modal for Hi Panda -->
+ <div id="modalHiPanda" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+  
+    <button onclick="closeModal('modalHiPanda')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+      &times;
+    </button>
+  
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalHiPandaImgMain" src="Products/Funky and Fun/Panda/Panda_LightYellow.jpeg"
+        class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+  
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Panda/Panda_LightYellow.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('HiPanda', this.src)">
+      </div>
+    </div>
+  
+    <!-- Info Section -->
+    <!-- Info Section -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Hi Panda</h2>
+  
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 839</p>
+  
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+  
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-yellow-200 text-stone-800 px-3 py-1 rounded-full text-sm">Light Yellow</span>
+      </div>
+  
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Combine charm and convenience with this Panda Case for iPhones. Featuring an adorable panda design and a chain, it allows for easy 
+        carrying and hands-free use. The durable material offers protection against scratches and minor drops, making it both stylish and functional
+      </p>
+  
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Modal for Lying Panda -->
+ <div id="modalLyingPanda" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+  
+    <button onclick="closeModal('modalLyingPanda')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+      &times;
+    </button>
+  
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalHiPandaImgMain" src="Products/Funky and Fun/Panda/Panda_Yellow.jpeg"
+        class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+  
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Panda/Panda_LightYellow.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('LyingPanda', this.src)">
+      </div>
+    </div>
+  
+    <!-- Info Section -->
+    <!-- Info Section -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Lying Panda</h2>
+  
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 839</p>
+  
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+  
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-yellow-200 text-stone-800 px-3 py-1 rounded-full text-sm">Light Yellow</span>
+      </div>
+  
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Combine charm and convenience with this Panda Case for iPhones. Featuring an adorable panda design and a chain, it allows for easy 
+        carrying and hands-free use. The durable material offers protection against scratches and minor drops, making it both stylish and functional
+      </p>
+  
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Modal for Cute Rabbit -->
+ <div id="modalCuteRabbit" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+  
+    <button onclick="closeModal('modalCuteRabbit')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+      &times;
+    </button>
+  
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalCuteRabbitImgMain" src="Products/Funky and Fun/Misc/Cute_Brown.jpeg"
+        class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+  
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Misc/Cute_Brown.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('CuteRabbit', this.src)">
+      </div>
+    </div>
+  
+    <!-- Info Section -->
+    <!-- Info Section -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Cute Rabbit</h2>
+  
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 839</p>
+  
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+  
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-amber-700 text-stone-100 px-3 py-1 rounded-full text-sm">Brown</span>
+      </div>
+  
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Combine charm and convenience with this Cute case for iPhones. Featuring an adorable design and a chain, it allows for easy 
+        carrying and hands-free use. The durable material offers protection against scratches and minor drops, making it both stylish and functional
+      </p>
+  
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Modal for Mua Rabbit -->
+ <div id="modalMuaRabbit" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto hidden">
+  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+  
+    <button onclick="closeModal('modalMuaRabbit')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 z-50 font-bold">
+      &times;
+    </button>
+  
+    <!-- Image Section -->
+    <div class="p-6 flex flex-col items-center justify-center">
+      <img id="modalCuteRabbitImgMain" src="Products/Funky and Fun/Misc/Mua_Pink.jpeg"
+        class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
+  
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <img src="Products/Funky and Fun/Misc/Mua_Pink.jpeg"
+             class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900"
+             onclick="updateModalImage('MuaRabbit', this.src)">
+      </div>
+    </div>
+  
+    <!-- Info Section -->
+    <!-- Info Section -->
+    <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
+      <h2 class="text-2xl sm:text-3xl font-bold">Mua Rabbit</h2>
+  
+      <!-- Price -->
+      <p class="text-4xl font-semibold text-red-600">Rs. 839</p>
+  
+      <!-- Compatible Models -->
+      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+      </div>
+  
+      <!-- Available Colors -->
+      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
+      <div class="flex gap-2 flex-wrap">
+        <span class="bg-pink-400 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
+      </div>
+  
+      <!-- Description -->
+      <h3 class="font-semibold mt-4 mb-1">Description</h3>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Combine charm and convenience with this Cute case for iPhones. Featuring an adorable design and a chain, it allows for easy 
+        carrying and hands-free use. The durable material offers protection against scratches and minor drops, making it both stylish and functional
+      </p>
+  
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="https://www.instagram.com/coversbee.nepal" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on Instagram
+        </a>
+        <a href="https://www.tiktok.com/@coversbee.np" target="_blank"
+          class="flex-1 bg-blue-900 text-white text-center py-2 rounded hover:bg-yellow-400 hover:text-black transition font-semibold">
+          Inquire on TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+ </div>
+ 
+ <!-- Script to manage both modals -->
+ <script>
+ function updateModalImage(category, src) {
+   const img = document.getElementById(`modal${category}ImgMain`);
+   if (img) img.src = src;
+ }
+ 
+ function openModal(id) {
+   document.getElementById(id).classList.remove('hidden');
+ }
+ 
+ function closeModal(id) {
+   document.getElementById(id).classList.add('hidden');
+ }
+ </script>
+>>>>>>> 627ac75 (Saved local changes before pulling)
 
   <script>
     // Show modal
