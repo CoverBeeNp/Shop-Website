@@ -406,25 +406,6 @@
   </div>
 </div>
 
-<script>
-  function updateModalImage(modalId, imageSrc) {
-    const img = document.getElementById(`modal${modalId}ImgMain`);
-    if (img) {
-      img.src = imageSrc;
-    }
-  }
-
-  function openModal(id) {
-    document.getElementById(id).classList.remove('hidden');
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).classList.add('hidden');
-  }
-</script>
-
-
-
   <!-- Half Butterfly -->
   <div class="border-2 border-black bg-white p-2">
   <div class="relative group w-full h-auto cursor-pointer" onclick="openModal('modalnewdesign2')">
