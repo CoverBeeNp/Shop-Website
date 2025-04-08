@@ -243,24 +243,37 @@
 
 
 <!-- Military Black Modal -->
-<div id="modalPopular2" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden">
-  <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
-    <button onclick="closeModal('modalPopular2')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 font-bold">&times;</button>
-     
+<div id="modalPopular2" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-2 sm:p-4 overflow-y-auto hidden">
+  <div class="bg-white w-full mmax-w-[95vw] sm:max-w-[90vw] md:max-w-3xl lg:max-w-4xl rounded-xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative overflow-hidden">
+    
     <!-- Close Button -->
-     <button onclick="closeModal('modalPopular2')" class="absolute top-2 right-2 sm:top-4 sm:right-4 text-2xl sm:text-3xl text-blue-700 hover:text-blue-900 font-bold">
+    <button onclick="closeModal('modalPopular2')" class="absolute top-1.5 right-1.5 sm:top-3 sm:right-3 text-lg sm:text-2xl text-blue-700 hover:text-blue-900 font-bold z-50">
       &times;
     </button>
 
-    <!-- Image Section -->
-    <div class="p-6 flex flex-col items-center justify-center">
-      <img id="mainImagePopular2" src="Products/Classic Collection/Military Grade/Black Military.jpeg" class="w-full max-w-sm rounded-xl object-cover transition-transform duration-300 hover:scale-105" />
-      <div class="flex gap-3 mt-4 flex-wrap justify-center">
-        <img src="Products/Classic Collection/Military Grade/Black Military.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular2', this)">
-        <img src="Products/Classic Collection/Military Grade/Brown_Military.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular2', this)">
-        <img src="Products/Classic Collection/Military Grade/Gray_Military.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular2', this)">
+          <!-- Image + Thumbnails Section (Styled like Stand Orange) -->
+      <div class="p-4 sm:p-6 flex flex-col sm:flex-col items-center justify-center">
+        <div class="flex flex-row sm:flex-col items-center gap-3">
+
+          <!-- Thumbnails: side on mobile, bottom on sm+ -->
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 order-1 sm:order-2">
+            <img src="Products/Classic Collection/Military Grade/Black Military.jpeg" 
+                class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded border cursor-pointer hover:border-blue-900"
+                onclick="updateImage('mainImagePopular2', this)">
+            <img src="Products/Classic Collection/Military Grade/Brown_Military.jpeg" 
+                class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded border cursor-pointer hover:border-blue-900"
+                onclick="updateImage('mainImagePopular2', this)">
+            <img src="Products/Classic Collection/Military Grade/Gray_Military.jpeg" 
+                class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded border cursor-pointer hover:border-blue-900"
+                onclick="updateImage('mainImagePopular2', this)">
+          </div>
+
+          <!-- Main Image -->
+          <img id="mainImagePopular2" 
+              src="Products/Classic Collection/Military Grade/Black Military.jpeg" 
+              class="w-44 sm:w-full max-w-[200px] sm:max-w-sm rounded-lg object-cover transition-transform duration-300 hover:scale-105 order-2 sm:order-1" />
+        </div>
       </div>
-    </div>
 
     <!-- Info Section -->
     <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
@@ -284,21 +297,30 @@
         </p>
       </div>
 
-      <!-- Compatible Models -->
-      <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
-      <div class="flex gap-2 flex-wrap">
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13 Regular</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13 Pro Max</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14 Regular</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15 Pro Max</span>
-      </div>
+            <!-- Responsive Row: Shows side-by-side on small screens, stacked on sm+ -->
+      <div class="flex flex-row sm:flex-col justify-between gap-4">
 
-      <!-- Available Colors -->
-      <p class="text-sm font-semibold mb-2 mt-4">Available Colors</p>
-      <div class="flex gap-2 flex-wrap">
-        <span class="bg-yellow-950 text-stone-100 px-3 py-1 rounded-full text-sm">Brown</span>
-        <span class="bg-neutral-900 text-stone-100 px-3 py-1 rounded-full text-sm">Black</span>
-        <span class="bg-neutral-500 text-stone-100 px-3 py-1 rounded-full text-sm">Grey</span>
+        <!-- Compatible Models (Left on mobile) -->
+        <div class="w-1/2 sm:w-full">
+          <p class="text-[11px] sm:text-sm font-semibold mb-2 mt-4">Compatible Models</p>
+          <div class="flex gap-2 flex-wrap">
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-[10px] sm:text-sm">iPhone 13 Regular</span>
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-[10px] sm:text-sm">iPhone 13 Pro Max</span>
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-[10px] sm:text-sm">iPhone 14 Regular</span>
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-[10px] sm:text-sm">iPhone 15 Pro Max</span>
+          </div>
+        </div>
+
+        <!-- Available Colors (Right on mobile) -->
+        <div class="w-1/2 sm:w-full">
+          <p class="text-[11px] sm:text-sm font-semibold mb-2 mt-4">Available Colors</p>
+          <div class="flex gap-2 flex-wrap">
+            <span class="bg-yellow-950 text-stone-100 px-3 py-1 rounded-full text-[10px] sm:text-sm">Brown</span>
+            <span class="bg-neutral-900 text-stone-100 px-3 py-1 rounded-full text-[10px] sm:text-sm">Black</span>
+            <span class="bg-neutral-500 text-stone-100 px-3 py-1 rounded-full text-[10px] sm:text-sm">Grey</span>
+          </div>
+        </div>
+
       </div>
 
       <!-- Description -->
