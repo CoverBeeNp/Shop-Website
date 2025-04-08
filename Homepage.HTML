@@ -274,10 +274,10 @@
       <!-- Compatible Models -->
       <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
       <div class="flex gap-2 flex-wrap">
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13 Pro Max</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15 Pro Max</span>
       </div>
 
       <!-- Available Colors -->
@@ -323,6 +323,10 @@
         <img src="Products/Classic Collection/Classic Silicone/Silicon_Yellow.jpeg" class="w-16 h-16 rounded border cursor-pointer hover:border-blue-900" onclick="updateImage('mainImagePopular3', this)">
       </div>
     </div>
+    <!-- Close Button -->
+    <button onclick="closeModal('modalPopular3')" class="absolute top-2 right-2 sm:top-4 sm:right-4 text-2xl sm:text-3xl text-blue-700 hover:text-blue-900 font-bold">
+      &times;
+    </button>
 
     <!-- Info Section -->
     <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
@@ -334,10 +338,12 @@
       <!-- Compatible Models -->
       <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
       <div class="flex gap-2 flex-wrap">
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13 Pro Max</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15 Pro Max</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 16 Regular</span>
       </div>
 
       <!-- Available Colors -->
@@ -420,21 +426,40 @@
         <img src="Products/Funky and Fun/Curvy Butterfly/Butterfly_Purple.jpeg" class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900" onclick="updateModalImage('newdesign1', this.src)">
       </div>
     </div>
+    <!-- Close Button -->
+    <button onclick="closeModal('modalnewdesign1')" class="absolute top-2 right-2 sm:top-4 sm:right-4 text-2xl sm:text-3xl text-blue-700 hover:text-blue-900 font-bold">
+      &times;
+    </button>
 
     <!-- Info Section -->
     <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
       <h2 class="text-2xl sm:text-3xl font-bold">Purple Butterfly</h2>
 
       <!-- Price -->
-      <p class="text-4xl font-semibold text-red-600">Rs. 789</p>
+      <!-- Price Section -->
+      <div class="space-y-2">
+        <!-- Badge -->
+        <span class="inline-block bg-red-700 text-white text-xs font-semibold px-3 py-1 rounded">
+          Naya Barsha Offer </span>
+
+        <!-- Main Price Row -->
+        <div class="flex items-end space-x-2">
+          <p class="text-xl font-semibold text-red-600">-20.82%</p>
+          <p class="text-3xl font-bold text-black leading-none">Rs. 789</p>
+        </div>
+
+        <!-- List Price Row -->
+        <p class="text-sm text-gray-500">
+          List Price: <span class="line-through">Rs. 989</span>
+        </p>
+      </div>
 
       <!-- Compatible Models -->
       <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
       <div class="flex gap-2 flex-wrap">
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15 Regular</span>
       </div>
 
       <!-- Description -->
@@ -486,21 +511,46 @@
         <img src="Products/Funky and Fun/Half Butterfly/HalfButterfly_Purple.jpeg" class="w-16 h-16 rounded object-cover border cursor-pointer hover:border-blue-900" onclick="updateModalImage('newdesign2', this.src)">
       </div>
     </div>
+    
+    <!-- Close Button -->
+    <button onclick="closeModal('modalnewdesign2')" class="absolute top-2 right-2 sm:top-4 sm:right-4 text-2xl sm:text-3xl text-blue-700 hover:text-blue-900 font-bold">
+      &times;
+    </button>
 
     <!-- Info Section -->
     <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
-      <h2 class="text-2xl sm:text-3xl font-bold">Half Butterfly Purple</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold">Half Purple Butterfly</h2>
 
       <!-- Price -->
-      <p class="text-4xl font-semibold text-red-600">Rs. 839</p>
+      <!-- Price Section -->
+      <div class="space-y-2">
+        <!-- Badge -->
+        <span class="inline-block bg-red-700 text-white text-xs font-semibold px-3 py-1 rounded">
+          Naya Barsha Offer </span>
+
+        <!-- Main Price Row -->
+        <div class="flex items-end space-x-2">
+          <p class="text-xl font-semibold text-red-600">-20.82%</p>
+          <p class="text-3xl font-bold text-black leading-none">Rs. 839</p>
+        </div>
+
+        <!-- List Price Row -->
+        <p class="text-sm text-gray-500">
+          List Price: <span class="line-through">Rs. 1059</span>
+        </p>
+      </div>
 
       <!-- Compatible Models -->
       <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
       <div class="flex gap-2 flex-wrap">
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13 Pro Max</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14 Pro Max</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15 Pro Max</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 16 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 16 Pro</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 16 Pro Max</span>
       </div>
 
       <!-- Description -->
@@ -531,7 +581,7 @@
     <img src="Products/Funky and Fun/Acrylic/Purple Flowers.jpeg" class="w-auto h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
     <div class="absolute bottom-0 left-0 w-full h-28 bg-yellow-300 bg-opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
       <div class="text-center">
-        <p class="text-black text-xl font-bold">Flowers Purple</p>
+        <p class="text-black text-xl font-bold">Acrylic Purple</p>
       </div>
     </div>
   </div>
@@ -555,7 +605,7 @@
 
     <!-- Info Section -->
     <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
-      <h2 class="text-2xl sm:text-3xl font-bold">Flowers Purple</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold">Acrylic Purple</h2>
 
       <!-- Price -->
       <p class="text-4xl font-semibold text-red-600">Rs. 789</p>
@@ -563,10 +613,8 @@
       <!-- Compatible Models -->
       <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
       <div class="flex gap-2 flex-wrap">
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 12</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 14</span>
-        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 13 Regular</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">iPhone 15 Regular</span>
       </div>
 
       <!-- Description -->
@@ -854,8 +902,22 @@
   <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
     <h2 class="text-2xl sm:text-3xl font-bold">Military Case</h2>
 
-    <!-- Price -->
-    <p class="text-4xl font-semibold text-red-600">Rs. 1239</p>
+    <div class="space-y-2">
+      <!-- Badge -->
+      <span class="inline-block bg-red-700 text-white text-xs font-semibold px-3 py-1 rounded">
+        Naya Barsha Offer </span>
+
+      <!-- Main Price Row -->
+      <div class="flex items-end space-x-2">
+        <p class="text-xl font-semibold text-red-600">-20.82%</p>
+        <p class="text-3xl font-bold text-black leading-none">Rs. 1239</p>
+      </div>
+
+      <!-- List Price Row -->
+      <p class="text-sm text-gray-500">
+        List Price: <span class="line-through">Rs. 1488</span>
+      </p>
+    </div>
 
     <!-- Compatible Models -->
     <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
@@ -920,14 +982,28 @@
              onclick="updateModalImage('RoughBack', this.src)">
       </div>
     </div>
-  
-    <!-- Info Section -->
+ 
     <!-- Info Section -->
     <div class="p-6 md:p-8 text-black space-y-5" style="font-family: 'Poppins', sans-serif;">
       <h2 class="text-2xl sm:text-3xl font-bold">Rough Back Case</h2>
   
       <!-- Price -->
-      <p class="text-4xl font-semibold text-red-600">Rs. 789</p>
+      <div class="space-y-2">
+        <!-- Badge -->
+        <span class="inline-block bg-red-700 text-white text-xs font-semibold px-3 py-1 rounded">
+          Naya Barsha Offer </span>
+
+        <!-- Main Price Row -->
+        <div class="flex items-end space-x-2">
+          <p class="text-xl font-semibold text-red-600">-20.82%</p>
+          <p class="text-3xl font-bold text-black leading-none">Rs. 767</p>
+        </div>
+
+        <!-- List Price Row -->
+        <p class="text-sm text-gray-500">
+          List Price: <span class="line-through">Rs. 969</span>
+        </p>
+      </div>
   
       <!-- Compatible Models -->
       <p class="text-sm font-semibold mb-2 mt-4">Compatible Models</p>
@@ -943,7 +1019,7 @@
       <div class="flex gap-2 flex-wrap">
         <span class="bg-blue-900 text-stone-100 px-3 py-1 rounded-full text-sm">Blue</span>
         <span class="bg-amber-700 text-stone-100 px-3 py-1 rounded-full text-sm">Brown</span>
-        <span class="bg-pink-200 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
+        <span class="bg-pink-600 text-stone-100 px-3 py-1 rounded-full text-sm">Pink</span>
       </div>
   
       <!-- Description -->
