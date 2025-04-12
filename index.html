@@ -559,6 +559,7 @@
   const models = product.model.split(',').map(model =>
     `<span class="bg-gray-100 px-3 py-1 rounded-full text-sm">${model.trim()}</span>`
   ).join('');
+
   const offerHTML = product.offerName !== "—" ? `
     <div class="space-y-2">
       <span class="inline-block bg-red-700 text-white text-xs font-semibold px-3 py-1 rounded">${product.offerName}</span>
@@ -578,10 +579,9 @@
   </div>
 `;
   return `
-    <div id="${modalId}" class="fixed inset-0 hidden bg-black bg-opacity-70 z-50 flex items-center justify-center p-2 sm:p-4 overflow-auto">
-      <div class="bg-white w-full max-w-[90vw] sm:max-w-2xl md:max-w-3xl lg:max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+    <div id="${modalId}" class="fixed inset-0 z-50 hidden bg-black bg-opacity-70 flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
+      <div class="bg-white w-full max-w-[95vw] sm:max-w-2xl md:max-w-3xl lg:max-w-5xl max-h-[95vh] overflow-y-auto rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
         <button onclick="closeModal('${modalId}')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 font-bold">&times;</button>
-
         <!-- Image Section -->
       <div class="p-4 sm:p-6 flex flex-col sm:flex-col items-center justify-center">
         <div class="flex flex-row sm:flex-col items-center gap-3">
