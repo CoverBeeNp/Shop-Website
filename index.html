@@ -298,49 +298,49 @@
 
 
  <!-- Footer -->
-<footer class="bg-white border-t border-black mt-16 px-6 pt-12 pb-6 text-sm text-black">
-  <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-left">
-    
-    <!-- Help -->
-    <div>
-      <h4 class="font-semibold text-base mb-3">Help</h4>
-      <ul class="space-y-2">
-        <li><a href="Faq.html" class="hover:underline">FAQ</a></li>
-        <li><a href="Faq.html#shipping" class="hover:underline">Shipping</a></li>
-        <li><a href="Faq.html#returns" class="hover:underline">Returns</a></li>
-        <li><a href="Faq.html#reviews" class="hover:underline">Reviews</a></li>
-      </ul>
-    </div>
+ <footer class="bg-white border-t border-black mt-16 px-6 pt-12 pb-6 text-sm text-black">
+ <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-left">
+   
+   <!-- Help -->
+   <div>
+     <h4 class="font-semibold text-base mb-3">Help</h4>
+     <ul class="space-y-2">
+       <li><a href="Faq.html" class="hover:underline">FAQ</a></li>
+       <li><a href="Faq.html#shipping" class="hover:underline">Shipping</a></li>
+       <li><a href="Faq.html#returns" class="hover:underline">Returns</a></li>
+       <li><a href="Faq.html#reviews" class="hover:underline">Reviews</a></li>
+     </ul>
+   </div>
 
-    <!-- Support -->
-    <div>
-      <h4 class="font-semibold text-base mb-3">Support</h4>
-      <ul class="space-y-2">
-        <li><a href="Contact.html#contact" class="hover:underline">Contact</a></li>
-        <li><a href="Contact.html#partner" class="hover:underline">Become a Partner</a></li>
-      </ul>
-    </div>
+   <!-- Support -->
+   <div>
+     <h4 class="font-semibold text-base mb-3">Support</h4>
+     <ul class="space-y-2">
+       <li><a href="Contact.html#contact" class="hover:underline">Contact</a></li>
+       <li><a href="Contact.html#partner" class="hover:underline">Become a Partner</a></li>
+     </ul>
+   </div>
 
-    <!-- Socials -->
-    <div>
-      <h4 class="font-semibold text-base mb-3">Socials</h4>
-      <ul class="space-y-2">
-        <li><a href="https://instagram.com/coversbee.nepal" target="_blank" class="hover:underline">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@coversbee.np" target="_blank" class="hover:underline">TikTok</a></li>
-      </ul>
-    </div>
+   <!-- Socials -->
+   <div>
+     <h4 class="font-semibold text-base mb-3">Socials</h4>
+     <ul class="space-y-2">
+       <li><a href="https://instagram.com/coversbee.nepal" target="_blank" class="hover:underline">Instagram</a></li>
+       <li><a href="https://www.tiktok.com/@coversbee.np" target="_blank" class="hover:underline">TikTok</a></li>
+     </ul>
+   </div>
 
-    <!-- Logo and Tagline -->
-    <div class="flex flex-col items-start space-y-2">
-      <img src="Black Text Logo.jpg" alt="CoversBee Logo" class="w-28">
-      <p class="text-sm text-black mt-1">Stylish & Affordable</p>
-    </div>
-  </div>
+   <!-- Logo and Tagline -->
+   <div class="flex flex-col items-start space-y-2">
+     <img src="Black Text Logo.jpg" alt="CoversBee Logo" class="w-28">
+     <p class="text-sm text-black mt-1">Stylish & Affordable</p>
+   </div>
+ </div>
 
-  <!-- Footer Bottom -->
-  <div class="mt-10 border-t border-black pt-4 text-center text-xs text-gray-600">
-    © 2025 CoversBee. All rights reserved.
-  </div>
+ <!-- Footer Bottom -->
+ <div class="mt-10 border-t border-black pt-4 text-center text-xs text-gray-600">
+   © 2025 CoversBee. All rights reserved.
+ </div>
 </footer>
 </body>
 
@@ -578,8 +578,8 @@
   </div>
 `;
   return `
-    <div id="${modalId}" class="fixed inset-0 hidden bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-auto">
-      <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
+    <div id="${modalId}" class="fixed inset-0 hidden bg-black bg-opacity-70 z-50 flex items-center justify-center p-2 sm:p-4 overflow-auto">
+      <div class="bg-white w-full max-w-[90vw] sm:max-w-2xl md:max-w-3xl lg:max-w-5xl rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 relative">
         <button onclick="closeModal('${modalId}')" class="absolute top-4 right-4 text-3xl text-blue-700 hover:text-blue-900 font-bold">&times;</button>
 
         <!-- Image Section -->
@@ -588,8 +588,8 @@
         <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 order-1 sm:order-2">
         ${imageHTML}
         </div>
-          <img id="mainImagePopular1" src="${imgLinks[0]}" 
-             class="w-44 sm:w-full max-w-[200px] sm:max-w-sm rounded-lg object-cover transition-transform duration-300 hover:scale-105 order-2 sm:order-1" />
+          <img id="mainImage${index}" src="${imgLinks[0]}" 
+            class="w-40 sm:w-64 md:w-full max-w-xs md:max-w-sm rounded-lg object-cover transition-transform duration-300 hover:scale-105" />
       </div>
       </div>
         <!-- Info Section -->
