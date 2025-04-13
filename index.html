@@ -85,10 +85,16 @@
   </div>
   
 <!-- Product Tabs: Popular and New Design -->
-<section class="text-center text-xl font-semibold mt-10">
-  <div class="flex justify-center gap-8">
-    <button onclick="showTab('popularSection')" id="popularTab" class="underline-hover font-bold">Popular</button>
-    <button onclick="showTab('newDesignSection')" id="newDesignTab" class="underline-hover">New Design</button>
+<section class="text-center font-semibold mt-10">
+  <div class="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 text-base sm:text-lg md:text-xl">
+    <button onclick="showTab('popularSection')" id="popularTab"
+      class="px-3 pb-2 border-b-4 transition-all font-bold border-yellow-400">
+      Popular
+    </button>
+    <button onclick="showTab('newDesignSection')" id="newDesignTab"
+      class="px-3 pb-2 border-b-4 transition-all font-medium border-blue-500">
+      New Design
+    </button>
   </div>
 </section>
 
@@ -101,28 +107,30 @@
 <section id="newDesignSection" class="tab-section hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl mx-auto">
  
 </section>
+<!-- Section Category -->
 <script>
   function showTab(tabId) {
     document.getElementById('popularSection').classList.add('hidden');
     document.getElementById('newDesignSection').classList.add('hidden');
     document.getElementById(tabId).classList.remove('hidden');
 
-    // Optional: toggle active tab styling
-    document.getElementById('popularTab').classList.remove('font-bold');
-    document.getElementById('newDesignTab').classList.remove('font-bold');
-    if (tabId === 'popularSection') {
-      document.getElementById('popularTab').classList.add('font-bold');
-    } else {
-      document.getElementById('newDesignTab').classList.add('font-bold');
-    }
+    const tabs = ['popularTab', 'newDesignTab'];
+    tabs.forEach(tab => {
+      const el = document.getElementById(tab);
+      el.classList.remove('border-yellow-400', 'font-bold');
+      el.classList.add('border-blue-500', 'font-medium');
+    });
+
+    const activeTab = tabId === 'popularSection' ? 'popularTab' : 'newDesignTab';
+    const el = document.getElementById(activeTab);
+    el.classList.remove('border-blue-500', 'font-medium');
+    el.classList.add('border-yellow-400', 'font-bold');
   }
 
-  // Set default view on page load
   window.onload = () => {
     showTab('popularSection');
-  }
+  };
 </script>
-
 
 <span class="text-center text-2xl font-bold mt-10 block"></span>
 
@@ -212,12 +220,20 @@
 
 
 <!-- Category Tabs -->
-<section id="Sales" class="text-center text-xl font-semibold mt-10">
-  <div class="flex justify-center gap-8">
-    <button onclick="showCategory('Classic')" class="underline-hover">Classic Collection</button>
-    <button onclick="showCategory('Funky')" class="underline-hover">Funky and Fun</button>
-    <button onclick="showCategory('Luxury')" class="underline-hover">Luxury</button>
-    <!-- <button onclick="showCategory('Artistic')" class="underline-hover">Artistic Designs</button> -->
+<section id="Sales" class="text-center font-semibold mt-10">
+  <div class="flex flex-wrap justify-center gap-4 md:gap-8 pb-2 text-base sm:text-lg md:text-xl">
+    <button onclick="showCategory('Classic')" id="tab-Classic"
+      class="px-3 pb-2 border-b-4 border-blue-500 transition-all font-medium">
+      Classic Collection
+    </button>
+    <button onclick="showCategory('Funky')" id="tab-Funky"
+      class="px-3 pb-2 border-b-4 border-blue-500 transition-all font-medium">
+      Funky and Fun
+    </button>
+    <button onclick="showCategory('Luxury')" id="tab-Luxury"
+      class="px-3 pb-2 border-b-4 border-blue-500 transition-all font-medium">
+      Luxury
+    </button>
   </div>
 </section>
 
@@ -237,33 +253,33 @@
   
 </section>
 
+<!-- Section Script --> 
 <script>
   function showCategory(tabId) {
+    // Hide all category sections
     document.getElementById('Classic').classList.add('hidden');
     document.getElementById('Funky').classList.add('hidden');
     document.getElementById('Luxury').classList.add('hidden');
     document.getElementById(tabId).classList.remove('hidden');
 
-    // Optional: toggle active tab styling
-    document.getElementById('Classic').classList.remove('font-bold');
-    document.getElementById('Funky').classList.remove('font-bold');
-    document.getElementById('Luxury').classList.remove('font-bold');
-    if (tabId === 'Classic') {
-      document.getElementById('Classic').classList.add('font-bold');
-    } 
-    else if(tabId === 'Funky') {
-      document.getElementById('Funky').classList.add('font-bold');
-    } 
-    else if(tabId === 'Luxury') {
-      document.getElementById('Luxury').classList.add('font-bold');
-    }
+    // Reset tab styles
+    ['Classic', 'Funky', 'Luxury'].forEach(category => {
+      const btn = document.getElementById(`tab-${category}`);
+      btn.classList.remove('border-yellow-400', 'font-bold', 'shadow-sm');
+      btn.classList.add('border-blue-500', 'font-medium');
+    });
+
+    // Style the active tab
+    const activeBtn = document.getElementById(`tab-${tabId}`);
+    activeBtn.classList.remove('border-blue-500', 'font-medium');
+    activeBtn.classList.add('border-yellow-400', 'font-bold', 'shadow-sm');
   }
 
-  // Set default view on page load
   window.onload = () => {
     showCategory('Classic');
-  }
+  };
 </script>
+
 
  <!-- Script to manage all Modals -->
  <script>
@@ -550,7 +566,7 @@
 
   function createModalHTML(product, index, imgLinks) {
   const modalId = `dynamic_${product.productName}_Modal${index}`;
-  const modalImageId = `modalImage${index}`;
+  const modalImageId = `mainImage_${product.productName.replace(/\s+/g, '_')}_${index}`;
 
   const colors = product.avaColor !== "—" ? product.avaColor.split(',').map(color =>
     `<span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm">${color.trim()}</span>`
@@ -574,7 +590,7 @@
     ${imgLinks.map(link => `
       <img src="${link}"  
            class="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded border cursor-pointer hover:border-blue-900" 
-           onclick="updateImage('mainImagePopular1', this)">
+           onclick="updateImage('mainImage_${product.productName.replace(/\s+/g, '_')}_${index}', this); highlightActiveThumbnail(this)">
     `).join("")}
   </div>
 `;
@@ -588,8 +604,9 @@
         <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 order-1 sm:order-2">
         ${imageHTML}
         </div>
-          <img id="mainImage${index}" src="${imgLinks[0]}" 
-            class="w-40 sm:w-64 md:w-full max-w-xs md:max-w-sm rounded-lg object-cover transition-transform duration-300 hover:scale-105" />
+          <img id="${modalImageId}" src="${imgLinks[0]}" 
+            onclick="openFullImage(this.src)"
+            class="cursor-zoom-in w-40 sm:w-64 md:w-full max-w-xs md:max-w-sm rounded-lg object-cover transition-transform duration-300 hover:scale-105" />
       </div>
       </div>
         <!-- Info Section -->
@@ -618,6 +635,41 @@
     </div>
   `;
 }
+function updateImage(mainImageId, thumbElement) {
+  const mainImg = document.getElementById(mainImageId);
+  if (mainImg && thumbElement?.src) {
+    mainImg.src = thumbElement.src;
+  }
+}
+function highlightActiveThumbnail(el) {
+  const siblings = el.parentElement.querySelectorAll("img");
+  siblings.forEach(img => img.classList.remove("ring-2", "ring-yellow-400"));
+  el.classList.add("ring-2", "ring-yellow-400");
+}
+
+function openFullImage(src) {
+  const zoomOverlay = document.createElement('div');
+  zoomOverlay.className = 'fixed inset-0 z-[100] bg-black bg-opacity-80 flex items-center justify-center';
+
+  zoomOverlay.innerHTML = `
+    <div class="relative">
+      <button onclick="this.closest('div').parentElement.remove()" 
+        class="absolute top-2 right-2 text-white text-2xl font-bold
+               bg-blue-700 hover:bg-red-600 
+               rounded-full w-10 h-10 flex items-center justify-center
+               shadow-[0_0_12px_3px_rgba(239,68,68,0.8)]
+               transition-all duration-200 hover:scale-110">
+        &times;
+      </button>
+      <img src="${src}" 
+        class="max-h-[90vh] max-w-[95vw] object-contain rounded shadow-xl" />
+    </div>
+  `;
+
+  document.body.appendChild(zoomOverlay);
+}
+
+
 
 </script>
 
