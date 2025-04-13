@@ -210,93 +210,111 @@
 
 
 
-<!-- Reviews Section -->
-<section class="bg-yellow-400 py-12 px-6 shadow-md shadow-gray-400 shadow-inner">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+<!-- Reviews Section with Review Button on Top and Swipable Reviews Below -->
+<section class="bg-yellow-400 py-10 px-6 shadow-inner shadow-gray-400">
+  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6">
 
-    <!-- Review Submission Form -->
-    <div>
-      <h3 class="text-2xl font-semibold mb-4 text-center md:text-left">Share Your Review</h3>
-      <p class="text-base mb-4 text-center md:text-left">Have a cover from us? Leave a review and attach a photo anonymously!</p>
-
-      <form action="https://formsubmit.co/coverbeenepal@gmail.com" method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-md space-y-4">
-        <textarea name="message" placeholder="Write your review..." class="w-full border border-gray-300 rounded-lg p-3 text-sm resize-none" rows="4" required></textarea>
-
-        <!-- Attach + Submit Row -->
-        <div class="flex flex-col sm:flex-row gap-4 w-full">
-          <div class="relative w-full">
-            <label class="w-full block cursor-pointer">
-              <div class="bg-blue-900 text-white text-center py-2 rounded-lg hover:bg-yellow-400 transition">
-                Choose File
-              </div>
-              <input type="file" name="image" accept="image/*" required class="absolute inset-0 opacity-0 cursor-pointer" onchange="document.getElementById('file-name').innerText = this.files[0]?.name || 'No file chosen';" />
-            </label>
-          </div>
-
-          <button type="submit" class="w-full bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-yellow-400 transition">
-            Submit Review
-          </button>
-        </div>
-
-        <!-- File name text -->
-        <p id="file-name" class="text-xs text-gray-600 text-center">No file chosen</p>
-
-        <!-- Anti-bot honeypot -->
-        <input type="text" name="_honey" style="display:none">
-        <input type="hidden" name="_captcha" value="false">
-
-        <!-- Redirect after submission -->
-        <input type="hidden" name="_next" value="https://coversbee.np/thank-you.html" />
-      </form>
+    <!-- Top: Leave a Review Button -->
+    <div class="text-center mb-6">
+      <h3 class="text-2xl font-semibold text-black mb-2">Leave a Review</h3>
+      <p class="text-sm text-gray-700 mb-4">Bought a cover from us? We'd love to hear your thoughts!</p>
+      <a href="https://forms.gle/d9HXyhruA8XKp9Ca7" target="_blank"
+         class="inline-block bg-blue-900 text-white px-6 py-3 rounded-lg 
+                hover:bg-yellow-400 hover:text-black transition font-semibold shadow-md">
+        Fill Out the Review Form
+      </a>
     </div>
 
-    <!-- Review Slider -->
-    <div class="bg-yellow-400 rounded-lg">
-      <h3 class="text-2xl font-semibold mb-6 text-center md:text-left">What Our Customers Are Saying</h3>
+    <!-- Bottom: Review Slider -->
+    <div class="relative overflow-hidden h-[280px]">
+      <!-- Arrows -->
+      <button id="prevReview" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-black text-2xl font-bold z-10 hover:text-yellow-500 transition">
+        &#8249;
+      </button>
+      <button id="nextReview" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-black text-2xl font-bold z-10 hover:text-yellow-500 transition">
+        &#8250;
+      </button>
 
-      <div class="relative overflow-hidden h-[240px]">
-        <div id="doubleReviewSlider" class="w-full h-full flex transition-transform duration-400 ease-in-out">
-
-          <!-- Slide 1 -->
-          <div class="w-full flex flex-col gap-2">
-            <div class="review-item bg-white px-4 py-4 rounded-lg shadow-md hover:bg-blue-900 hover:text-white transition-all duration-300">
-              <p class="text-base italic">“The Marble Pink case is gorgeous! I’ve dropped my phone twice and it held up perfectly. Style + protection!”</p>
-              <p class="mt-3 text-sm font-semibold">– Meera Joshi, Kathmandu</p>
-            </div>
-            <div class="review-item bg-white px-4 py-4 rounded-lg shadow-md hover:bg-blue-900 hover:text-white transition-all duration-300">
-              <p class="text-base italic">“Beautiful designs! I wish there were more color options for my phone model though.”</p>
-              <p class="mt-3 text-sm font-semibold">– Rabi Thapa, Pokhara</p>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="w-full flex flex-col gap-2 hidden">
-            <div class="review-item bg-white px-4 py-4 rounded-lg shadow-md hover:bg-blue-900 hover:text-white transition-all duration-300">
-              <p class="text-base italic">“Love my Butterfly Purple case! The grip is great and the texture feels premium.”</p>
-              <p class="mt-3 text-sm font-semibold">– Anuja KC, Butwal</p>
-            </div>
-            <div class="review-item bg-white px-4 py-4 rounded-lg shadow-md hover:bg-blue-900 hover:text-white transition-all duration-300">
-              <p class="text-base italic">“Delivery took a bit longer than expected, but the case quality made up for it. Worth the wait.”</p>
-              <p class="mt-3 text-sm font-semibold">– Nishan Giri, Lalitpur</p>
-            </div>
-          </div>
-        </div>
+      <!-- Review Slides -->
+      <div id="liveReviewSlider" class="flex transition-transform duration-500 ease-in-out">
+        <!-- Dynamic cards will load here -->
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- Slider Logic -->
-<script>
-  const slides = document.querySelectorAll('#doubleReviewSlider > div');
-  let currentSlide = 0;
 
-  setInterval(() => {
-    slides[currentSlide].classList.add('hidden');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.remove('hidden');
-  }, 4000);
-</script>
+
+<!-- Review Slider Script -->
+<script>
+  const reviewAPI = "https://opensheet.elk.sh/1Q0G4on3pnvFsQtYe_-36q6xFMOBzg73Xt_STwlfR-Ow/Sheet1";
+  
+  fetch(reviewAPI)
+    .then(res => res.json())
+    .then(data => {
+      const slider = document.getElementById("liveReviewSlider");
+      slider.innerHTML = "";
+  
+      data.forEach((review, i) => {
+        const name = review["Name (Optional)"] || "Anonymous";
+        const initials = name.split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
+        const message = review["Your Review"] || "";
+        const image = review["Image URL"] || "";
+        const rating = parseInt(review["Rate Your Experience"]) || 5;
+  
+        const card = document.createElement("div");
+        card.className = "w-full md:w-1/2 shrink-0 px-4";
+        card.innerHTML = `
+          <div class="bg-white rounded-xl shadow p-4 max-w-md mx-auto text-left flex flex-col gap-2">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-yellow-400 text-black font-bold flex items-center justify-center rounded-full text-lg">
+                ${initials}
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-black">${name}</p>
+                <div class="flex gap-1 text-yellow-500 text-sm">
+                  ${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}
+                </div>
+              </div>
+            </div>
+            <p class="text-sm italic text-gray-800">“${message}”</p>
+            ${image ? `<img src="${image}" class="w-16 h-16 object-cover rounded mt-2 border" />` : ""}
+          </div>
+        `;
+        slider.appendChild(card);
+      });
+  
+      let index = 0;
+      const slides = slider.children;
+      const total = slides.length;
+      const slidesPerView = window.innerWidth >= 768 ? 2 : 1;
+  
+      function showSlide(i) {
+        const offset = -i * 100;
+        slider.style.transform = `translateX(${offset}%)`;
+      }
+  
+      document.getElementById("prevReview").onclick = () => {
+        index = (index - slidesPerView + total) % total;
+        showSlide(index);
+      };
+  
+      document.getElementById("nextReview").onclick = () => {
+        index = (index + slidesPerView) % total;
+        showSlide(index);
+      };
+  
+      setInterval(() => {
+        index = (index + slidesPerView) % total;
+        showSlide(index);
+      }, 6000);
+    })
+    .catch(err => {
+      document.getElementById("liveReviewSlider").innerHTML = "<p class='text-sm text-center'>Failed to load reviews.</p>";
+      console.error(err);
+    });
+  </script>
 
 <!-- Service Highlights (No Hover, White Boxes) -->
 <section class="bg-white py-12 px-6 font-['Playfair_Display']">
