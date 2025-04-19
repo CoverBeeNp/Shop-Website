@@ -250,20 +250,24 @@
 <!-- Review Slider Script -->
 <script>
   const reviewAPI = "https://opensheet.elk.sh/1Q0G4on3pnvFsQtYe_-36q6xFMOBzg73Xt_STwlfR-Ow/Reviews";
-  
+
   fetch(reviewAPI)
     .then(res => res.json())
     .then(data => {
       const slider = document.getElementById("liveReviewSlider");
       slider.innerHTML = "";
-  
-      data.forEach((review, i) => {
-        const name = review["Name (Optional)"] || "Anonymous";
+
+      // Only keep reviews with 4 or 5 stars
+      const filteredReviews = data.filter(review => parseInt(review["Rating"]) >= 4);
+
+      filteredReviews.forEach((review) => {
+        const name = review["Name"] || "Anonymous";
         const initials = name.split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
-        const message = review["Your Review"] || "";
-        const image = review["Image URL"] || "";
-        const rating = parseInt(review["Rate Your Experience"]) || 5;
-  
+        const message = review["Comment"] || "";
+        const image = review["Picture"] || "";
+        const rating = parseInt(review["Rating"]) || 5;
+        const date = review["Date"] ? new Date(review["Date"]).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' }) : "";
+
         const card = document.createElement("div");
         card.className = "w-full md:w-1/2 shrink-0 px-4";
         card.innerHTML = `
@@ -274,6 +278,7 @@
               </div>
               <div>
                 <p class="text-sm font-semibold text-black">${name}</p>
+                <p class="text-xs text-gray-500">${date}</p>
                 <div class="flex gap-1 text-yellow-500 text-sm">
                   ${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}
                 </div>
@@ -285,27 +290,27 @@
         `;
         slider.appendChild(card);
       });
-  
+
       let index = 0;
       const slides = slider.children;
       const total = slides.length;
       const slidesPerView = window.innerWidth >= 768 ? 2 : 1;
-  
+
       function showSlide(i) {
         const offset = -i * 100;
         slider.style.transform = `translateX(${offset}%)`;
       }
-  
+
       document.getElementById("prevReview").onclick = () => {
         index = (index - slidesPerView + total) % total;
         showSlide(index);
       };
-  
+
       document.getElementById("nextReview").onclick = () => {
         index = (index + slidesPerView) % total;
         showSlide(index);
       };
-  
+
       setInterval(() => {
         index = (index + slidesPerView) % total;
         showSlide(index);
@@ -315,7 +320,8 @@
       document.getElementById("liveReviewSlider").innerHTML = "<p class='text-sm text-center'>Failed to load reviews.</p>";
       console.error(err);
     });
-  </script>
+</script>
+
 
 <!-- Service Highlights (No Hover, White Boxes) -->
 <section class="bg-white py-12 px-6 font-['Playfair_Display']">
