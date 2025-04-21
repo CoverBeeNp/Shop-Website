@@ -211,9 +211,9 @@
 
 
 
-<!-- Reviews Section with Review Button on Top and Swipable Reviews Below -->
+<!-- Reviews Section -->
 <section class="bg-yellow-400 py-10 px-6 shadow-inner shadow-gray-400">
-  <div class="max-w-4xl mx-auto  rounded-xl p-6">
+  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6">
 
     <!-- Top: Leave a Review Button -->
     <div class="text-center mb-6">
@@ -221,24 +221,15 @@
       <p class="text-sm text-gray-700 mb-4">Bought a cover from us? We'd love to hear your thoughts!</p>
       <a href="https://forms.gle/d9HXyhruA8XKp9Ca7" target="_blank"
          class="inline-block bg-blue-900 text-white px-6 py-3 rounded-lg 
-                hover:bg-yellow-50 hover:text-black transition font-semibold shadow-md">
+                hover:bg-yellow-400 hover:text-black transition font-semibold shadow-md">
         Fill Out the Review Form
       </a>
     </div>
 
-    <!-- Bottom: Review Slider -->
+    <!-- Bottom: Review Slider (no arrows) -->
     <div class="relative overflow-hidden h-[400px] md:h-[420px]">
-      <!-- Arrows -->
-      <button id="prevReview" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-black text-3xl font-bold z-10 hover:text-yellow-500 transition">
-        &#8249;
-      </button>
-      <button id="nextReview" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-black text-3xl font-bold z-10 hover:text-yellow-500 transition">
-        &#8250;
-      </button>
-
-      <!-- Review Slides -->
       <div id="liveReviewSlider" class="flex transition-transform duration-500 ease-in-out">
-        <!-- Dynamic cards will load here -->
+        <!-- Reviews will be injected here -->
       </div>
     </div>
 
@@ -265,7 +256,7 @@
         const rating = parseInt(review["Rating"]) || 5;
         const date = review["Date"] ? new Date(review["Date"]).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' }) : "";
 
-        // Convert Google Drive links to direct links
+        // Convert Google Drive links to direct image links
         let imageUrl = "";
         if (rawImage.includes("drive.google.com")) {
           let fileId = "";
@@ -282,7 +273,7 @@
         }
 
         const card = document.createElement("div");
-        card.className = "w-full md:w-1/2 shrink-0 px-4";
+        card.className = "w-full shrink-0 px-4";
         card.innerHTML = `
           <div class="bg-white rounded-xl shadow p-6 max-w-xl mx-auto text-left flex flex-col gap-4">
             <div class="flex items-center gap-4">
@@ -304,36 +295,27 @@
         slider.appendChild(card);
       });
 
+      // Autoplay logic: one review every 3 seconds
       let index = 0;
       const slides = slider.children;
       const total = slides.length;
-      const slidesPerView = window.innerWidth >= 768 ? 2 : 1;
 
       function showSlide(i) {
         const offset = -i * 100;
         slider.style.transform = `translateX(${offset}%)`;
       }
 
-      document.getElementById("prevReview").onclick = () => {
-        index = (index - slidesPerView + total) % total;
-        showSlide(index);
-      };
-
-      document.getElementById("nextReview").onclick = () => {
-        index = (index + slidesPerView) % total;
-        showSlide(index);
-      };
-
       setInterval(() => {
-        index = (index + slidesPerView) % total;
+        index = (index + 1) % total;
         showSlide(index);
-      }, 6000);
+      }, 3000);
     })
     .catch(err => {
       document.getElementById("liveReviewSlider").innerHTML = "<p class='text-sm text-center'>Failed to load reviews.</p>";
       console.error(err);
     });
 </script>
+
 
 
 
