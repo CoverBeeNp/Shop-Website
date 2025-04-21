@@ -213,7 +213,7 @@
 
 <!-- Reviews Section with Review Button on Top and Swipable Reviews Below -->
 <section class="bg-yellow-400 py-10 px-6 shadow-inner shadow-gray-400">
-  <div class="max-w-4xl mx-auto rounded-xl shadow-md p-6">
+  <div class="max-w-4xl mx-auto  rounded-xl p-6">
 
     <!-- Top: Leave a Review Button -->
     <div class="text-center mb-6">
@@ -221,18 +221,18 @@
       <p class="text-sm text-gray-700 mb-4">Bought a cover from us? We'd love to hear your thoughts!</p>
       <a href="https://forms.gle/d9HXyhruA8XKp9Ca7" target="_blank"
          class="inline-block bg-blue-900 text-white px-6 py-3 rounded-lg 
-                hover:bg-yellow-400 hover:text-black transition font-semibold shadow-md">
+                hover:bg-yellow-50 hover:text-black transition font-semibold shadow-md">
         Fill Out the Review Form
       </a>
     </div>
 
     <!-- Bottom: Review Slider -->
-    <div class="relative overflow-hidden h-[280px]">
+    <div class="relative overflow-hidden h-[400px] md:h-[420px]">
       <!-- Arrows -->
-      <button id="prevReview" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-black text-2xl font-bold z-10 hover:text-yellow-500 transition">
+      <button id="prevReview" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-black text-3xl font-bold z-10 hover:text-yellow-500 transition">
         &#8249;
       </button>
-      <button id="nextReview" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-black text-2xl font-bold z-10 hover:text-yellow-500 transition">
+      <button id="nextReview" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-black text-3xl font-bold z-10 hover:text-yellow-500 transition">
         &#8250;
       </button>
 
@@ -244,8 +244,6 @@
 
   </div>
 </section>
-
-
 
 <!-- Review Slider Script -->
 <script>
@@ -267,17 +265,15 @@
         const rating = parseInt(review["Rating"]) || 5;
         const date = review["Date"] ? new Date(review["Date"]).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' }) : "";
 
-        // ✅ Convert Google Drive links to direct image links
+        // Convert Google Drive links to direct links
         let imageUrl = "";
         if (rawImage.includes("drive.google.com")) {
           let fileId = "";
-
           if (rawImage.includes("/d/")) {
             fileId = rawImage.split("/d/")[1].split("/")[0];
           } else if (rawImage.includes("open?id=")) {
             fileId = rawImage.split("open?id=")[1];
           }
-
           if (fileId) {
             imageUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
           }
@@ -288,21 +284,21 @@
         const card = document.createElement("div");
         card.className = "w-full md:w-1/2 shrink-0 px-4";
         card.innerHTML = `
-          <div class="bg-white rounded-xl shadow p-4 max-w-md mx-auto text-left flex flex-col gap-2">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-yellow-400 text-black font-bold flex items-center justify-center rounded-full text-lg">
+          <div class="bg-white rounded-xl shadow p-6 max-w-xl mx-auto text-left flex flex-col gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-yellow-400 text-black font-bold flex items-center justify-center rounded-full text-xl">
                 ${initials}
               </div>
               <div>
-                <p class="text-sm font-semibold text-black">${name}</p>
+                <p class="text-base font-semibold text-black">${name}</p>
                 <p class="text-xs text-gray-500">${date}</p>
-                <div class="flex gap-1 text-yellow-500 text-sm">
+                <div class="flex gap-1 text-yellow-500 text-base">
                   ${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}
                 </div>
               </div>
             </div>
-            <p class="text-sm italic text-gray-800">“${message}”</p>
-            ${imageUrl ? `<img src="${imageUrl}" class="w-16 h-16 object-cover rounded mt-2 border" />` : ""}
+            <p class="text-base italic text-gray-800 leading-relaxed">“${message}”</p>
+            ${imageUrl ? `<img src="${imageUrl}" class="w-20 h-20 object-cover rounded mt-2 border shadow-sm" />` : ""}
           </div>
         `;
         slider.appendChild(card);
