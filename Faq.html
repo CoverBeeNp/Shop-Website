@@ -215,7 +215,7 @@
 <section class="bg-yellow-400 py-6 px-6 shadow-inner shadow-gray-400">
   <div class="max-w-4xl mx-auto rounded-xl p-4">
 
-    <!-- Top: Leave a Review Button -->
+    <!-- Top: Leave a Review -->
     <div class="text-center mb-6">
       <h3 class="text-2xl font-semibold text-black mb-2">Leave a Review</h3>
       <p class="text-sm text-gray-700 mb-4">Bought a cover from us? We'd love to hear your thoughts!</p>
@@ -226,17 +226,17 @@
       </a>
     </div>
 
-    <!-- Bottom: Review Slider (no arrows) -->
-    <div class="relative overflow-hidden h-[400px] md:h-[420px]">
+    <!-- Review Slider (no arrows) -->
+    <div class="relative overflow-hidden h-[420px]">
       <div id="liveReviewSlider" class="flex transition-transform duration-500 ease-in-out">
-        <!-- Reviews will be injected here -->
+        <!-- Cards will load here -->
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- Review Slider Script -->
+<!-- Working Script -->
 <script>
   const reviewAPI = "https://opensheet.elk.sh/1Q0G4on3pnvFsQtYe_-36q6xFMOBzg73Xt_STwlfR-Ow/Reviews";
 
@@ -246,7 +246,7 @@
       const slider = document.getElementById("liveReviewSlider");
       slider.innerHTML = "";
 
-      const filteredReviews = data.filter(review => parseInt(review["Rating"]) >= 4);
+      const filteredReviews = data.filter(r => parseInt(r["Rating"]) >= 4);
 
       filteredReviews.forEach((review) => {
         const name = review["Name"] || "Anonymous";
@@ -254,9 +254,11 @@
         const message = review["Comment"] || "";
         const rawImage = review["Picture"] || "";
         const rating = parseInt(review["Rating"]) || 5;
-        const date = review["Date"] ? new Date(review["Date"]).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' }) : "";
+        const date = review["Date"]
+          ? new Date(review["Date"]).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' })
+          : "";
 
-        // Convert Google Drive links to direct image links
+        // ✅ Convert Google Drive link to direct viewable image
         let imageUrl = "";
         if (rawImage.includes("drive.google.com")) {
           let fileId = "";
@@ -265,9 +267,7 @@
           } else if (rawImage.includes("open?id=")) {
             fileId = rawImage.split("open?id=")[1];
           }
-          if (fileId) {
-            imageUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
-          }
+          imageUrl = fileId ? `https://drive.google.com/uc?export=view&id=${fileId}` : "";
         } else {
           imageUrl = rawImage;
         }
@@ -289,13 +289,13 @@
               </div>
             </div>
             <p class="text-base italic text-gray-800 leading-relaxed">“${message}”</p>
-            ${imageUrl ? `<img src="${imageUrl}" class="w-20 h-20 object-cover rounded mt-2 border shadow-sm" />` : ""}
+            ${imageUrl ? `<img src="${imageUrl}" class="w-24 h-24 object-cover rounded mt-2 border shadow-sm" alt="Review Image" />` : ""}
           </div>
         `;
         slider.appendChild(card);
       });
 
-      // Autoplay logic: one review every 3 seconds
+      // Auto slider every 3 seconds
       let index = 0;
       const slides = slider.children;
       const total = slides.length;
@@ -312,7 +312,7 @@
     })
     .catch(err => {
       document.getElementById("liveReviewSlider").innerHTML = "<p class='text-sm text-center'>Failed to load reviews.</p>";
-      console.error(err);
+      console.error("Review load error:", err);
     });
 </script>
 
