@@ -257,16 +257,33 @@
       const slider = document.getElementById("liveReviewSlider");
       slider.innerHTML = "";
 
-      // Only keep reviews with 4 or 5 stars
       const filteredReviews = data.filter(review => parseInt(review["Rating"]) >= 4);
 
       filteredReviews.forEach((review) => {
         const name = review["Name"] || "Anonymous";
         const initials = name.split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
         const message = review["Comment"] || "";
-        const image = review["Picture"] || "";
+        const rawImage = review["Picture"] || "";
         const rating = parseInt(review["Rating"]) || 5;
         const date = review["Date"] ? new Date(review["Date"]).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' }) : "";
+
+        // ✅ Convert Google Drive links to direct image links
+        let imageUrl = "";
+        if (rawImage.includes("drive.google.com")) {
+          let fileId = "";
+
+          if (rawImage.includes("/d/")) {
+            fileId = rawImage.split("/d/")[1].split("/")[0];
+          } else if (rawImage.includes("open?id=")) {
+            fileId = rawImage.split("open?id=")[1];
+          }
+
+          if (fileId) {
+            imageUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
+          }
+        } else {
+          imageUrl = rawImage;
+        }
 
         const card = document.createElement("div");
         card.className = "w-full md:w-1/2 shrink-0 px-4";
@@ -285,7 +302,7 @@
               </div>
             </div>
             <p class="text-sm italic text-gray-800">“${message}”</p>
-            ${image ? `<img src="${image}" class="w-16 h-16 object-cover rounded mt-2 border" />` : ""}
+            ${imageUrl ? `<img src="${imageUrl}" class="w-16 h-16 object-cover rounded mt-2 border" />` : ""}
           </div>
         `;
         slider.appendChild(card);
@@ -321,6 +338,7 @@
       console.error(err);
     });
 </script>
+
 
 
 <!-- Service Highlights (No Hover, White Boxes) -->
