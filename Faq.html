@@ -210,26 +210,27 @@
 </section>
 
 
+<!-- Dynamic Reviews Section (Manual Scroll + Live Data) -->
+<section class="bg-yellow-400 py-8 px-6 shadow-inner shadow-gray-400">
+  <div class="max-w-6xl mx-auto">
 
-<!-- Reviews Section -->
-<section class="bg-yellow-400 py-6 px-6 shadow-inner shadow-gray-400">
-  <div class="max-w-4xl mx-auto rounded-xl p-4">
-
-    <!-- Top: Leave a Review -->
-    <div class="text-center mb-6">
-      <h3 class="text-2xl font-semibold text-black mb-2">Leave a Review</h3>
-      <p class="text-sm text-gray-700 mb-4">Bought a cover from us? We'd love to hear your thoughts!</p>
+    <!-- Header Row: Left Title, Right Button -->
+    <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-blue-900">Customer Reviews</h2>
+        <p class="text-sm text-blue-900 mt-1">What people are saying about CoversBee.</p>
+      </div>
       <a href="https://forms.gle/d9HXyhruA8XKp9Ca7" target="_blank"
-         class="inline-block bg-blue-900 text-white px-6 py-3 rounded-lg 
-                hover:bg-yellow-400 hover:text-black transition font-semibold shadow-md">
-        Fill Out the Review Form
+         class="bg-blue-900 text-white px-5 py-2 rounded-lg 
+                hover:bg-white hover:text-blue-900 transition font-semibold shadow-md text-sm">
+        Write Us a Review
       </a>
     </div>
 
-    <!-- Review Slider (no arrows) -->
-    <div class="relative overflow-hidden h-[420px]">
-      <div id="liveReviewSlider" class="flex transition-transform duration-500 ease-in-out">
-        <!-- Cards will load here -->
+    <!-- Scrollable Review Cards -->
+    <div class="overflow-x-auto pb-3">
+      <div id="liveReviewSlider" class="flex gap-4 w-max">
+        <!-- Dynamic cards appear here -->
       </div>
     </div>
 
@@ -239,82 +240,75 @@
 <!-- Working Script -->
 <script>
   const reviewAPI = "https://opensheet.elk.sh/1Q0G4on3pnvFsQtYe_-36q6xFMOBzg73Xt_STwlfR-Ow/Reviews";
-
+  
   fetch(reviewAPI)
     .then(res => res.json())
     .then(data => {
       const slider = document.getElementById("liveReviewSlider");
       slider.innerHTML = "";
-
+  
       const filteredReviews = data.filter(r => parseInt(r["Rating"]) >= 4);
-
+  
       filteredReviews.forEach((review) => {
         const name = review["Name"] || "Anonymous";
-        const initials = name.split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
+        const location = review["Location"] || "";
         const message = review["Comment"] || "";
         const rawImage = review["Picture"] || "";
         const rating = parseInt(review["Rating"]) || 5;
         const date = review["Date"]
           ? new Date(review["Date"]).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' })
           : "";
-
-        // ✅ Convert Google Drive link to direct viewable image
+  
+        const initials = name.split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
+  
+        // Robust Google Drive image URL parsing
         let imageUrl = "";
         if (rawImage.includes("drive.google.com")) {
           let fileId = "";
+  
           if (rawImage.includes("/d/")) {
-            fileId = rawImage.split("/d/")[1].split("/")[0];
-          } else if (rawImage.includes("open?id=")) {
-            fileId = rawImage.split("open?id=")[1];
+            const match = rawImage.match(/\/d\/([a-zA-Z0-9_-]{10,})/);
+            fileId = match ? match[1] : "";
           }
-          imageUrl = fileId ? `https://drive.google.com/uc?export=view&id=${fileId}` : "";
-        } else {
+  
+          if (!fileId && rawImage.includes("open?id=")) {
+            fileId = rawImage.split("open?id=")[1].split("&")[0];
+          }
+  
+          if (fileId) {
+            imageUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
+          }
+        } else if (rawImage.startsWith("http")) {
           imageUrl = rawImage;
         }
-
+  
+        // Create card
         const card = document.createElement("div");
-        card.className = "w-full shrink-0 px-4";
+        card.className = "bg-white rounded-lg shadow p-5 w-72 flex-shrink-0";
         card.innerHTML = `
-          <div class="bg-white rounded-xl shadow p-6 max-w-xl mx-auto text-left flex flex-col gap-4">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-yellow-400 text-black font-bold flex items-center justify-center rounded-full text-xl">
-                ${initials}
-              </div>
-              <div>
-                <p class="text-base font-semibold text-black">${name}</p>
-                <p class="text-xs text-gray-500">${date}</p>
-                <div class="flex gap-1 text-yellow-500 text-base">
-                  ${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}
-                </div>
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-yellow-400 text-black font-bold flex items-center justify-center text-sm">
+              ${initials}
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-black">${name}</p>
+              <p class="text-xs text-gray-500">${location}</p>
+              <div class="text-yellow-500 text-sm leading-none mt-0.5">
+                ${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}
               </div>
             </div>
-            <p class="text-base italic text-gray-800 leading-relaxed">“${message}”</p>
-            ${imageUrl ? `<img src="${imageUrl}" class="w-24 h-24 object-cover rounded mt-2 border shadow-sm" alt="Review Image" />` : ""}
           </div>
+          <p class="text-sm text-black leading-snug mb-1">${message}</p>
+          ${imageUrl ? `<img src="${imageUrl}" class="w-full h-28 object-cover rounded border mt-2 shadow-sm" alt="Review Image" />` : ""}
         `;
         slider.appendChild(card);
       });
-
-      // Auto slider every 3 seconds
-      let index = 0;
-      const slides = slider.children;
-      const total = slides.length;
-
-      function showSlide(i) {
-        const offset = -i * 100;
-        slider.style.transform = `translateX(${offset}%)`;
-      }
-
-      setInterval(() => {
-        index = (index + 1) % total;
-        showSlide(index);
-      }, 3000);
     })
     .catch(err => {
       document.getElementById("liveReviewSlider").innerHTML = "<p class='text-sm text-center'>Failed to load reviews.</p>";
       console.error("Review load error:", err);
     });
-</script>
+  </script>
 
 
 
